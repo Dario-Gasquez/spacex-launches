@@ -10,11 +10,6 @@ NOTES:
 - Xcode 10.2 and Swift 5 were used to create this project.
 - Although Carthage was used to include an external dependency, you should be able to compile the app without interacting with this dependency manager.
 
-## Troubleshooting
-### Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler (Kingfisher)
-Update the library using the following command:
-`carthage update Kingfisher --platform iOS --no-use-binaries`
-
 ## Description
 ### Architecture
 I tried to strike a balance between choosing a robust architecture on one hand and avoiding needless complexity or solution over-design on the other.
@@ -51,3 +46,8 @@ NOTE: Other solutions like Core Data or Realm were considered needlessly complex
 
 ### 4. Pull to Refresh
 The user is able to refresh the information shown in the launches list screen by using the pull to refresh feature.
+
+## Troubleshooting
+### Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler (Kingfisher)
+Update the library using the following command:
+`carthage update Kingfisher --platform iOS --no-use-binaries`
