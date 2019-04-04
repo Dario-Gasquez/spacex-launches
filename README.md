@@ -7,8 +7,13 @@ A small iOS sample app that retrieves and shows Space X launches information
 3. Compile and Run
 
 NOTES: 
-- Xcode 10.x was used to create this project.
+- Xcode 10.2 and Swift 5 were used to create this project.
 - Although Carthage was used to include an external dependency, you should be able to compile the app without interacting with this dependency manager.
+
+## Troubleshooting
+### Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler (Kingfisher)
+Update the library using the following command:
+`carthage update Kingfisher --platform iOS --no-use-binaries`
 
 ## Description
 ### Architecture
