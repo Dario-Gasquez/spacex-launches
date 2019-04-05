@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  Buccaneers
+
+  Created by Dario on 3/17/19.
+  Copyright © 2019 Dario Gasquez. All rights reserved.
+*/
+
+
+// MARK: - Space X Launches List Screen
+"Launches" = "Lanzamientos";
+"Error fetching launches" = "Error al recuperar lanzamientos";
+"We could not fetch ships information. Please check your internet connection." = "No pudimos recuperar informacion de los barcos. Por favor chequea tu conexion de Internet.";
+"Ok" = "Ok";
+
+
+// MARK: - Launch Details Screen
+"Launch Details" = "Detalles del Lanzamiento";
+
+
+// MARK: - PirateShipViewModel
+"Not launched yet" = "Aun sin lanzamiento";
+"Flight nr." = "Vuelo nro.";
+"No mission details" = "No hay detalles de la mission";

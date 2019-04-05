@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1d-Ir-PUq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launches-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="Launches" customClass="LaunchesViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lSm-b2-o5C" userLabel="Launches View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="S4U-ht-Vqz">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LaunchCollectionViewCell" id="coy-l5-bOH" customClass="LaunchCollectionViewCell" customModule="SpaceX" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="NoMissionPatch" translatesAutoresizingMaskIntoConstraints="NO" id="gOl-Rd-X6E">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="36"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41O-I1-dHi" userLabel="Mission Name">
+                                                    <rect key="frame" x="8" y="44" width="84" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXa-oO-mLk" userLabel="Flight Number">
+                                                    <rect key="frame" x="8" y="85.5" width="84" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="top" secondItem="gOl-Rd-X6E" secondAttribute="top" id="0zt-y5-6R1"/>
+                                            <constraint firstItem="41O-I1-dHi" firstAttribute="leading" secondItem="coy-l5-bOH" secondAttribute="leadingMargin" id="RHc-pP-WUG"/>
+                                            <constraint firstItem="KXa-oO-mLk" firstAttribute="leading" secondItem="coy-l5-bOH" secondAttribute="leadingMargin" id="Z7r-9F-N81"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="41O-I1-dHi" secondAttribute="trailing" id="dKL-KY-sau"/>
+                                            <constraint firstAttribute="bottom" secondItem="KXa-oO-mLk" secondAttribute="bottom" id="dNy-eP-d04"/>
+                                            <constraint firstItem="41O-I1-dHi" firstAttribute="top" secondItem="gOl-Rd-X6E" secondAttribute="bottom" constant="8" symbolic="YES" id="dTp-XX-hqs"/>
+                                            <constraint firstAttribute="trailing" secondItem="gOl-Rd-X6E" secondAttribute="trailing" id="gm3-V9-8Wx"/>
+                                            <constraint firstItem="KXa-oO-mLk" firstAttribute="top" secondItem="41O-I1-dHi" secondAttribute="bottom" constant="8" symbolic="YES" id="rHO-U4-Oc1"/>
+                                            <constraint firstItem="gOl-Rd-X6E" firstAttribute="leading" secondItem="coy-l5-bOH" secondAttribute="leading" id="uVK-69-wfG"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="KXa-oO-mLk" secondAttribute="trailing" id="vPS-i5-Ybc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="flightNumber" destination="KXa-oO-mLk" id="Qmp-zp-WAo"/>
+                                            <outlet property="missionName" destination="41O-I1-dHi" id="84W-ng-Kf0"/>
+                                            <outlet property="missionPatchImageView" destination="gOl-Rd-X6E" id="gO2-sk-LNR"/>
+                                            <segue destination="wUb-cL-rX2" kind="show" identifier="ShowLaunchDetails" id="ETw-8u-3Mb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dua-gB-lnP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KLb-5J-e07"/>
+                                </connections>
+                            </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OTC-Ro-7CU">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Iy-YC-peI"/>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8xl-e8-O8C"/>
+                            <constraint firstItem="OTC-Ro-7CU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YPv-mj-PsB"/>
+                            <constraint firstItem="OTC-Ro-7CU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gWx-4K-TtG"/>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hdv-fO-FYb"/>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="leY-5D-MOZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Launches" id="eB3-iX-y8G">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="wLC-KB-Xpl"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="OTC-Ro-7CU" id="auF-0L-eEe"/>
+                        <outlet property="launchesView" destination="lSm-b2-o5C" id="p95-59-Bfa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797.60000000000002" y="-564.46776611694156"/>
+        </scene>
+        <!--Launch Details-->
+        <scene sceneID="S9O-VQ-9JL">
+            <objects>
+                <viewController title="Launch Details" id="wUb-cL-rX2" userLabel="Launch Details" customClass="LaunchDetailsViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LZG-TU-bXA" customClass="LaunchDetailsView" customModule="SpaceX" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-Lh-nJE" userLabel="MissionPatchImageView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="269.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="17R-6e-Twt">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="86"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iv7-Wo-9LJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Mission Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-bA-fOW" userLabel="Mission Name Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="281.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-GR-FeT">
+                                                <rect key="frame" x="289.5" y="4.5" width="85.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight nr: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-5x-RDd">
+                                        <rect key="frame" x="0.0" y="37" width="81.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVZ-7y-H0w" userLabel="Mission Description Label">
+                                        <rect key="frame" x="0.0" y="65.5" width="88" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Iv7-Wo-9LJ" firstAttribute="leading" secondItem="17R-6e-Twt" secondAttribute="leadingMargin" id="Fa9-wg-iEy"/>
+                                    <constraint firstItem="Iv7-Wo-9LJ" firstAttribute="top" secondItem="17R-6e-Twt" secondAttribute="top" id="cXa-x6-0if"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Iv7-Wo-9LJ" secondAttribute="trailing" id="xJY-uz-Iz4"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Nfd-Lh-nJE" secondAttribute="trailing" id="1Dh-Eb-iAo"/>
+                            <constraint firstItem="Nfd-Lh-nJE" firstAttribute="leading" secondItem="LZG-TU-bXA" secondAttribute="leading" id="7fG-qu-5wC"/>
+                            <constraint firstItem="17R-6e-Twt" firstAttribute="leading" secondItem="GLk-um-j4E" secondAttribute="leading" id="82d-OQ-CvC"/>
+                            <constraint firstItem="17R-6e-Twt" firstAttribute="top" secondItem="Nfd-Lh-nJE" secondAttribute="bottom" id="8Mp-Ti-gPT"/>
+                            <constraint firstAttribute="centerY" secondItem="Nfd-Lh-nJE" secondAttribute="bottom" id="ZcU-Ot-srb"/>
+                            <constraint firstItem="Nfd-Lh-nJE" firstAttribute="top" secondItem="LZG-TU-bXA" secondAttribute="topMargin" id="bMt-LU-3fN"/>
+                            <constraint firstItem="GLk-um-j4E" firstAttribute="trailing" secondItem="17R-6e-Twt" secondAttribute="trailing" id="dmz-Z7-OBW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GLk-um-j4E"/>
+                        <connections>
+                            <outlet property="flightNumberLabel" destination="bTy-5x-RDd" id="c4J-RI-C2t"/>
+                            <outlet property="missionDescriptionLabel" destination="yVZ-7y-H0w" id="cbO-2V-LvA"/>
+                            <outlet property="missionNameLabel" destination="vdf-bA-fOW" id="q1x-1a-X11"/>
+                            <outlet property="missionResultLabel" destination="raZ-GR-FeT" id="hvP-OH-4UI"/>
+                            <outlet property="shipImageView" destination="Nfd-Lh-nJE" id="PGr-fv-Zzf"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="launchDetailsView" destination="LZG-TU-bXA" id="Jl5-bc-asZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYX-tf-SNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="-564"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="89c-A2-Zqs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q1d-Ir-PUq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="l5L-hE-eZh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tZi-nl-whQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kaR-jw-VJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="-564"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NoMissionPatch" width="300" height="300"/>
+    </resources>
+</document>

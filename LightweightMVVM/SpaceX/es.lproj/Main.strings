@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "41O-I1-dHi"; */
+"41O-I1-dHi.text" = "Title";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "KXa-oO-mLk"; */
+"KXa-oO-mLk.text" = "Price";
+
+/* Class = "UIButton"; normalTitle = "Ahoy!"; ObjectID = "WKq-D1-3yl"; */
+"WKq-D1-3yl.normalTitle" = "Ahoy!";
+
+/* Class = "UINavigationItem"; title = "Pirate Ships"; ObjectID = "eB3-iX-y8G"; */
+"eB3-iX-y8G.title" = "Barcos Pirata";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "raZ-GR-FeT"; */
+"raZ-GR-FeT.text" = "Price";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "vdf-bA-fOW"; */
+"vdf-bA-fOW.text" = "Title";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "wLC-KB-Xpl"; */
+"wLC-KB-Xpl.title" = "Atras";
+
+/* Class = "UIViewController"; title = "Ship Details"; ObjectID = "wUb-cL-rX2"; */
+"wUb-cL-rX2.title" = "Detalles del barco";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "yVZ-7y-H0w"; */
+"yVZ-7y-H0w.text" = "Description";
