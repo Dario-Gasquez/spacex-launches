@@ -23,20 +23,18 @@ class URLRequestFactory {
     }
     
     
-    func baseRequest(endPoint: String) -> URLRequest? {
+    func baseRequest(endPoint: String) -> URLRequest{
         let stringURL = "\(config.APIHost)/\(endPoint)"
         
-        guard let encodedStringURL = stringURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-            let url = URL(string: encodedStringURL) else {
-            return nil
-        }
+        let encodedStringURL = stringURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: encodedStringURL)!
         
         return URLRequest(url:url)
     }
     
     
-    func jsonRequest(endPoint: String) -> URLRequest? {
-        guard var request = baseRequest(endPoint: endPoint) else { return nil }
+    func jsonRequest(endPoint: String) -> URLRequest {
+        var request = baseRequest(endPoint: endPoint)
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return request

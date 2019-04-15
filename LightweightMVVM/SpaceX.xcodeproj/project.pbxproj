@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A312FBA4223F70F20003100D /* Kingfisher.framework */; };
+		A314B98C22652C06002F9F70 /* LaunchesURLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */; };
+		A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */; };
+		A314B990226533A0002F9F70 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98F226533A0002F9F70 /* QueueManager.swift */; };
+		A314B99222653646002F9F70 /* LaunchesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B99122653646002F9F70 /* LaunchesDataManager.swift */; };
 		A34684102264DF5D008171BC /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346840F2264DF5D008171BC /* ConcurrentOperation.swift */; };
 		A34684122264F7AE008171BC /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684112264F7AE008171BC /* RequestConfig.swift */; };
 		A34684142264F876008171BC /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684132264F876008171BC /* URLRequestFactory.swift */; };
@@ -56,6 +60,10 @@
 /* Begin PBXFileReference section */
 		A312FBA4223F70F20003100D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Kingfisher.framework.dSYM; path = Carthage/Build/iOS/Kingfisher.framework.dSYM; sourceTree = "<group>"; };
+		A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesURLRequestFactory.swift; sourceTree = "<group>"; };
+		A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesRetrievalOperation.swift; sourceTree = "<group>"; };
+		A314B98F226533A0002F9F70 /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
+		A314B99122653646002F9F70 /* LaunchesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesDataManager.swift; sourceTree = "<group>"; };
 		A346840F2264DF5D008171BC /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		A34684112264F7AE008171BC /* RequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfig.swift; sourceTree = "<group>"; };
 		A34684132264F876008171BC /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
@@ -259,6 +267,10 @@
 				A346840F2264DF5D008171BC /* ConcurrentOperation.swift */,
 				A34684112264F7AE008171BC /* RequestConfig.swift */,
 				A34684132264F876008171BC /* URLRequestFactory.swift */,
+				A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */,
+				A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */,
+				A314B98F226533A0002F9F70 /* QueueManager.swift */,
+				A314B99122653646002F9F70 /* LaunchesDataManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -431,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3FDE486223ABC7F0052C2AF /* LaunchesViewController.swift in Sources */,
+				A314B98C22652C06002F9F70 /* LaunchesURLRequestFactory.swift in Sources */,
 				A396F404223ADBF500B5F94A /* APIRequest.swift in Sources */,
 				A38C88F6223C752600ACB52F /* LaunchDetailsView.swift in Sources */,
 				A34684122264F7AE008171BC /* RequestConfig.swift in Sources */,
@@ -438,11 +451,14 @@
 				A3C76A3E223B4AA80053450F /* LaunchesService.swift in Sources */,
 				A3C47CB9223EB666007AD451 /* LaunchesDataStore.swift in Sources */,
 				A34684142264F876008171BC /* URLRequestFactory.swift in Sources */,
+				A314B990226533A0002F9F70 /* QueueManager.swift in Sources */,
+				A314B99222653646002F9F70 /* LaunchesDataManager.swift in Sources */,
 				A3FDE4BB223AD28D0052C2AF /* Launch.swift in Sources */,
 				A3FDE4B4223AC0E00052C2AF /* NetworkRequest.swift in Sources */,
 				A38C88F4223C72DD00ACB52F /* LaunchDetailsViewController.swift in Sources */,
 				A3FDE484223ABC7F0052C2AF /* AppDelegate.swift in Sources */,
 				A396F407223B03E600B5F94A /* LaunchViewModel.swift in Sources */,
+				A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */,
 				A3FDE4B8223AC55B0052C2AF /* APIResources.swift in Sources */,
 				A3C76A42223B5A1D0053450F /* LaunchCollectionViewCell.swift in Sources */,
 			);
