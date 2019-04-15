@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A312FBA4223F70F20003100D /* Kingfisher.framework */; };
+		A34684102264DF5D008171BC /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346840F2264DF5D008171BC /* ConcurrentOperation.swift */; };
+		A34684122264F7AE008171BC /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684112264F7AE008171BC /* RequestConfig.swift */; };
+		A34684142264F876008171BC /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684132264F876008171BC /* URLRequestFactory.swift */; };
 		A38C88F4223C72DD00ACB52F /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C88F3223C72DD00ACB52F /* LaunchDetailsViewController.swift */; };
 		A38C88F6223C752600ACB52F /* LaunchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C88F5223C752600ACB52F /* LaunchDetailsView.swift */; };
 		A396F404223ADBF500B5F94A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396F403223ADBF500B5F94A /* APIRequest.swift */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		A312FBA4223F70F20003100D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Kingfisher.framework.dSYM; path = Carthage/Build/iOS/Kingfisher.framework.dSYM; sourceTree = "<group>"; };
+		A346840F2264DF5D008171BC /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		A34684112264F7AE008171BC /* RequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfig.swift; sourceTree = "<group>"; };
+		A34684132264F876008171BC /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
 		A38C88F3223C72DD00ACB52F /* LaunchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewController.swift; sourceTree = "<group>"; };
 		A38C88F5223C752600ACB52F /* LaunchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsView.swift; sourceTree = "<group>"; };
 		A396F403223ADBF500B5F94A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -250,6 +256,9 @@
 				A3FDE4B3223AC0E00052C2AF /* NetworkRequest.swift */,
 				A3FDE4B7223AC55B0052C2AF /* APIResources.swift */,
 				A396F403223ADBF500B5F94A /* APIRequest.swift */,
+				A346840F2264DF5D008171BC /* ConcurrentOperation.swift */,
+				A34684112264F7AE008171BC /* RequestConfig.swift */,
+				A34684132264F876008171BC /* URLRequestFactory.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -424,8 +433,11 @@
 				A3FDE486223ABC7F0052C2AF /* LaunchesViewController.swift in Sources */,
 				A396F404223ADBF500B5F94A /* APIRequest.swift in Sources */,
 				A38C88F6223C752600ACB52F /* LaunchDetailsView.swift in Sources */,
+				A34684122264F7AE008171BC /* RequestConfig.swift in Sources */,
+				A34684102264DF5D008171BC /* ConcurrentOperation.swift in Sources */,
 				A3C76A3E223B4AA80053450F /* LaunchesService.swift in Sources */,
 				A3C47CB9223EB666007AD451 /* LaunchesDataStore.swift in Sources */,
+				A34684142264F876008171BC /* URLRequestFactory.swift in Sources */,
 				A3FDE4BB223AD28D0052C2AF /* Launch.swift in Sources */,
 				A3FDE4B4223AC0E00052C2AF /* NetworkRequest.swift in Sources */,
 				A38C88F4223C72DD00ACB52F /* LaunchDetailsViewController.swift in Sources */,
