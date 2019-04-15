@@ -15,40 +15,32 @@ import Kingfisher
 /// - Launch mission patch image download
 final class LaunchesService {
     
-    init (withAPIRequest request: APIRequest<LaunchesResource>) {
-        launchesRequest = request
+    init(launchesDataManager: LaunchesDataManager = LaunchesDataManager()) {
+        self.launchesDataManager = launchesDataManager
     }
 
-    init() {
-        let shipsResouce = LaunchesResource()
-        let shipsRequest = APIRequest(resource: shipsResouce)
-        launchesRequest = shipsRequest
-    }
     
-    
-    func fetchLaunches(andRun completion: @escaping ([LaunchViewModel]?) -> Void ) {
-        launchesRequest?.load { launches in
+    func fetchLaunches(completionHandler: @escaping (_ result: Result<[LaunchViewModel]>) -> Void) {
+        launchesDataManager.retrieveLaunches { (result) in
             let launchesDataStore = LaunchesDataStore()
-            if launches != nil {
-                self.launches = launches!.compactMap({$0})
-                do {
-                    try launchesDataStore.store(launches: self.launches)
-                } catch {
-                    fatalError("Could not save launches data to disk. error: \(error.localizedDescription)")
-                }
-            } else {
-                // if we did not get any data from the backend, try reading the cached model from disk
+            switch result {
+            case .failure:
+                // If we did not get any data from the backend, try reading the cached model from disk
                 do {
                     self.launches = try launchesDataStore.read()
                 } catch {
-                    completion(nil)
-                    return
+                    completionHandler(.failure(error))
                 }
+            case .success(let launches):
+                self.launches = launches.compactMap({ $0 })
+                do {
+                    try launchesDataStore.store(launches: launches)
+                } catch {
+                    fatalError("Could nto save launches data to disk. Error: \(error.localizedDescription)")
+                }
+                let launchesViewModels = self.launches.map { LaunchViewModel(from: $0) }
+                completionHandler(.success(launchesViewModels))
             }
-            
-            let launchesViewModels: [LaunchViewModel] = self.launches.map { LaunchViewModel(from: $0) }
-            
-            completion(launchesViewModels)
         }
     }
     
@@ -60,28 +52,28 @@ final class LaunchesService {
         }
         
         guard let url = launches[position].missionPatchImageURL else { return }
-
+        
         let kfOptions: KingfisherOptionsInfo = [
             .processor(DownsamplingImageProcessor(size: UIScreen.main.bounds.size)),
             .scaleFactor(UIScreen.main.scale),
             .cacheOriginalImage
         ]
-
+        
         KingfisherManager.shared.retrieveImage(with: url, options: kfOptions) { result in
             switch result {
             case .success(let value):
                 
                 var launchViewModel = LaunchViewModel(from: self.launches[position])
                 launchViewModel.missionPatchImage = value.image
-
+                
                 completion(launchViewModel)
             case .failure:
                 completion(nil)
             }
         }
     }
-
+    
     // MARK: - Private Section -
-    private var launchesRequest: APIRequest<LaunchesResource>?
+    private var launchesDataManager: LaunchesDataManager
     private var launches: [Launch] = []
 }

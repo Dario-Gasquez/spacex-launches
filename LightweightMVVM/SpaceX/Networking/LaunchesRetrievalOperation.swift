@@ -21,23 +21,17 @@ class LaunchesRetrievalOperation: ConcurrentOperation<[Launch]> {
         
         task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             guard let launchesData = data else {
-                DispatchQueue.main.async {
-                    if let requestError = error { self.complete(result: .failure(requestError)) }
-                    else { self.complete(result: .failure(APIError.missingData)) }
-                }
+                if let requestError = error { self.complete(result: .failure(requestError)) }
+                else { self.complete(result: .failure(APIError.missingData)) }
                 return
             }
             
             do {
                 let launches = try JSONDecoder().decode([Launch].self, from: launchesData)
-                DispatchQueue.main.async {
-                    self.complete(result: .success(launches))
-                }
+                self.complete(result: .success(launches))
             } catch {
-                DispatchQueue.main.async {
-                    print(error.localizedDescription)
-                    self.complete(result: .failure(APIError.serializationFailed))
-                }
+                print(error.localizedDescription)
+                self.complete(result: .failure(APIError.serializationFailed))
             }
         })
         task?.resume()
