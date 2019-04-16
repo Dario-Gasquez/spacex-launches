@@ -734,9 +734,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Buccaneers;
+				TEST_TARGET_NAME = SpaceX;
 			};
 			name = Debug;
 		};
@@ -754,9 +755,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Buccaneers;
+				TEST_TARGET_NAME = SpaceX;
 			};
 			name = Release;
 		};
