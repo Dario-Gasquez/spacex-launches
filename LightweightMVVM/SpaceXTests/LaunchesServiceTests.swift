@@ -11,34 +11,37 @@ import XCTest
 
 class LaunchesServiceTests: XCTestCase {
     
-    var launchesResource: LaunchesResource!
-    var fakeRequest: FakeAPIRequest!
     var launchesService: LaunchesService!
     
     override func setUp() {
-        launchesResource = LaunchesResource()
-        fakeRequest = FakeAPIRequest(resource: launchesResource)
-        launchesService = LaunchesService(withAPIRequest: fakeRequest)
+        launchesService = LaunchesService(launchesDataManager: FakeLaunchesDataManager())
 
     }
 
     override func tearDown() {
-        fakeRequest = nil
-        launchesResource = nil
         launchesService = nil
     }
 
     
-    func testLaunchesViewModelArray_IsNotNil() {
-        launchesService.fetchLaunches { launches in
-            XCTAssertNotNil(launches)
+    func testLaunchesViewModelArray_IsNotEmpty() {
+        launchesService.fetchLaunches { (result) in
+            switch result {
+            case .failure:
+                XCTFail("received .failure instead of .success")
+            case .success(let launches):
+                XCTAssert(!launches.isEmpty, "expected non emtpy launches array")
+            }
         }
     }
 
 
     func testLaunchesViewModelArray_CountIsRight() {
-        launchesService.fetchLaunches { launches in
-            XCTAssertEqual(launches!.count, 10)
+        launchesService.fetchLaunches { (result) in
+            if case .success(let launches) = result {
+                XCTAssertEqual(launches.count, 10)
+            } else {
+                XCTFail("received .failure instead of .success")
+            }
         }
     }
 }

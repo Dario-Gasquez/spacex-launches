@@ -8,10 +8,15 @@
 
 import Foundation
 
-class LaunchesDataManager {
-    func retrieveLaunches(completionHander: @escaping (_ result: Result<[Launch]>) -> Void) {
+protocol LaunchesDataManager {
+    func retrieveLaunches(completionHandler: @escaping (Result<[Launch]>) -> Void)
+}
+
+
+class RemoteLaunchesDataManager: LaunchesDataManager {
+    func retrieveLaunches(completionHandler: @escaping (Result<[Launch]>) -> Void) {
         let operation = LaunchesRetrievalOperation()
-        operation.completionHandler = completionHander
+        operation.completionHandler = completionHandler
         QueueManager.enqueue(operation)
     }
 }

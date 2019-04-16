@@ -15,7 +15,7 @@ import Kingfisher
 /// - Launch mission patch image download
 final class LaunchesService {
     
-    init(launchesDataManager: LaunchesDataManager = LaunchesDataManager()) {
+    init(launchesDataManager: LaunchesDataManager = RemoteLaunchesDataManager()) {
         self.launchesDataManager = launchesDataManager
     }
 
