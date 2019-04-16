@@ -46,20 +46,17 @@ class LaunchesViewController: UIViewController {
     
     private var launchesService = LaunchesService()
     
-    
     private func fetchLaunches() {
-        launchesService.fetchLaunches { (launchesViewModels) in
+        launchesService.fetchLaunches { (result) in
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
-                
-                guard let launchesVM = launchesViewModels else {
+                switch result {
+                case .failure:
                     self.showErrorMessage()
-                    return
+                case .success(let launchesViewModels):
+                    self.launchesView.refreshControl?.endRefreshing()
+                    self.launches = launchesViewModels
                 }
-                
-                self.launchesView.refreshControl?.endRefreshing()
-
-                self.launches = launchesVM
             }
         }
     }
