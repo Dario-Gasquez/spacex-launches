@@ -1,3 +1,5 @@
+![](https://travis-ci.com/Dario-Gasquez/spacex-launches.svg?token=jRiUrGabh2zyzvzqNGub&branch=master)
+
 # Space X Launches
 A small iOS sample app that retrieves and shows Space X launches information
 
