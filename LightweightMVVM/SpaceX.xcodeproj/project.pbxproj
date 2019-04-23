@@ -352,13 +352,16 @@
 				TargetAttributes = {
 					A3FDE47F223ABC7F0052C2AF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					A3FDE493223ABC820052C2AF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = A3FDE47F223ABC7F0052C2AF;
 					};
 					A3FDE49E223ABC820052C2AF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = A3FDE47F223ABC7F0052C2AF;
 					};
 				};
@@ -679,7 +682,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -701,7 +704,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -721,7 +724,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceX.app/SpaceX";
 			};
@@ -742,7 +745,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceX.app/SpaceX";
 			};
@@ -763,7 +766,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SpaceX;
 			};
@@ -784,7 +787,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.djg.SpaceXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SpaceX;
 			};
