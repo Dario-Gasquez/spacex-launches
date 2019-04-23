@@ -28,6 +28,7 @@ final class LaunchesService {
                 // If we did not get any data from the backend, try reading the cached model from disk
                 do {
                     self.launches = try launchesDataStore.read()
+                    completionHandler(.success(self.launchesViewModels))
                 } catch {
                     completionHandler(.failure(error))
                 }
@@ -36,10 +37,9 @@ final class LaunchesService {
                 do {
                     try launchesDataStore.store(launches: launches)
                 } catch {
-                    fatalError("Could nto save launches data to disk. Error: \(error.localizedDescription)")
+                    fatalError("Could not save launches data to disk. Error: \(error.localizedDescription)")
                 }
-                let launchesViewModels = self.launches.map { LaunchViewModel(from: $0) }
-                completionHandler(.success(launchesViewModels))
+                completionHandler(.success(self.launchesViewModels))
             }
         }
     }
@@ -51,7 +51,7 @@ final class LaunchesService {
             return
         }
         
-        guard let url = launches[position].missionPatchImageURL else { return }
+        guard let url = launches[position].links.missionPatch else { return }
         
         let kfOptions: KingfisherOptionsInfo = [
             .processor(DownsamplingImageProcessor(size: UIScreen.main.bounds.size)),
@@ -76,4 +76,8 @@ final class LaunchesService {
     // MARK: - Private Section -
     private var launchesDataManager: LaunchesDataManager
     private var launches: [Launch] = []
+    private var launchesViewModels: [LaunchViewModel] {
+        let launchesViewModels = self.launches.map { LaunchViewModel(from: $0) }
+        return launchesViewModels
+    }
 }
