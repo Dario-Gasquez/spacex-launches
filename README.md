@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/Dario-Gasquez/spacex-launches.svg?branch=develop)](https://travis-ci.com/Dario-Gasquez/spacex-launches)
+[![Build Status](https://travis-ci.com/Dario-Gasquez/spacex-launches.svg)](https://travis-ci.com/Dario-Gasquez/spacex-launches)
 
 # Space X Launches
 A small iOS sample app that retrieves and shows Space X launches information
