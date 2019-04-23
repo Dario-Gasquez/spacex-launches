@@ -27,6 +27,9 @@
 		A3C76A42223B5A1D0053450F /* LaunchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C76A41223B5A1D0053450F /* LaunchCollectionViewCell.swift */; };
 		A3D666D92240413000507E09 /* LaunchesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D666D82240413000507E09 /* LaunchesServiceTests.swift */; };
 		A3D666DC2240417A00507E09 /* launches.json in Resources */ = {isa = PBXBuildFile; fileRef = A3D666DB2240417A00507E09 /* launches.json */; };
+		A3F29520226E3B7300B8E16F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2951F226E3B7300B8E16F /* Utilities.swift */; };
+		A3F29522226F8C7A00B8E16F /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F29521226F8C7A00B8E16F /* Rocket.swift */; };
+		A3F29524226F8C9900B8E16F /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F29523226F8C9900B8E16F /* Links.swift */; };
 		A3FDE484223ABC7F0052C2AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDE483223ABC7F0052C2AF /* AppDelegate.swift */; };
 		A3FDE486223ABC7F0052C2AF /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDE485223ABC7F0052C2AF /* LaunchesViewController.swift */; };
 		A3FDE489223ABC7F0052C2AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FDE487223ABC7F0052C2AF /* Main.storyboard */; };
@@ -79,6 +82,9 @@
 		A3C76A41223B5A1D0053450F /* LaunchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3D666D82240413000507E09 /* LaunchesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesServiceTests.swift; sourceTree = "<group>"; };
 		A3D666DB2240417A00507E09 /* launches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launches.json; sourceTree = "<group>"; };
+		A3F2951F226E3B7300B8E16F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		A3F29521226F8C7A00B8E16F /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		A3F29523226F8C9900B8E16F /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		A3FDE480223ABC7F0052C2AF /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FDE483223ABC7F0052C2AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3FDE485223ABC7F0052C2AF /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 				A3D666D82240413000507E09 /* LaunchesServiceTests.swift */,
 				A3FDE498223ABC820052C2AF /* LaunchViewModelTests.swift */,
 				A3D666DA2240413400507E09 /* Mocks */,
+				A3F2951F226E3B7300B8E16F /* Utilities.swift */,
 			);
 			path = SpaceXTests;
 			sourceTree = "<group>";
@@ -248,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				A3FDE4BA223AD28D0052C2AF /* Launch.swift */,
+				A3F29521226F8C7A00B8E16F /* Rocket.swift */,
+				A3F29523226F8C9900B8E16F /* Links.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -442,9 +451,11 @@
 				A3C47CB9223EB666007AD451 /* LaunchesDataStore.swift in Sources */,
 				A34684142264F876008171BC /* URLRequestFactory.swift in Sources */,
 				A314B990226533A0002F9F70 /* QueueManager.swift in Sources */,
+				A3F29522226F8C7A00B8E16F /* Rocket.swift in Sources */,
 				A314B99222653646002F9F70 /* LaunchesDataManager.swift in Sources */,
 				A3FDE4BB223AD28D0052C2AF /* Launch.swift in Sources */,
 				A38C88F4223C72DD00ACB52F /* LaunchDetailsViewController.swift in Sources */,
+				A3F29524226F8C9900B8E16F /* Links.swift in Sources */,
 				A3FDE484223ABC7F0052C2AF /* AppDelegate.swift in Sources */,
 				A396F407223B03E600B5F94A /* LaunchViewModel.swift in Sources */,
 				A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */,
@@ -458,6 +469,7 @@
 			files = (
 				A3D666D92240413000507E09 /* LaunchesServiceTests.swift in Sources */,
 				A3FDE499223ABC820052C2AF /* LaunchViewModelTests.swift in Sources */,
+				A3F29520226E3B7300B8E16F /* Utilities.swift in Sources */,
 				A314B99422664849002F9F70 /* FakeLaunchesDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

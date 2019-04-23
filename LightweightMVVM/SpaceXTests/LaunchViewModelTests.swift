@@ -10,57 +10,59 @@ import XCTest
 @testable import SpaceX
 
 class LaunchViewModelTests: XCTestCase {
-    let validFlightNumber = 6
-    let validMissionName = "Falcon 9 Test Flight"
-    let validDetails = "Last launch of the original Falcon 9 v1.0 launch vehicle"
-    let validMissionPatchImageURL = URL(string: "https://images2.imgbox.com/5c/36/gbDKf6Y7_o.png")
+    var launches: [Launch]!
     
     override func setUp() {
+        launches = stubLaunchesFromBundle(fileName: "launches", withExtension: "json")
     }
     
     override func tearDown() {
+        launches = nil
     }
     
     
     func test_Valid_Initalization() {
-        let launch = Launch(flightNumber: validFlightNumber, missionName: validMissionName, details: validDetails, launchSuccess: true, missionPatchImageURL: validMissionPatchImageURL)
+        let launch = launches.first!
+
         let launchViewModel = LaunchViewModel(from: launch)
         
-        let expectedFlightNumberString = NSLocalizedString("Flight nr.", comment: "Flight number") + ": " + String(validFlightNumber)
+        let expectedFlightNumberString = NSLocalizedString("Flight nr.", comment: "Flight number") + ": " + String(launch.flightNumber)
         XCTAssertEqual(launchViewModel.flightNumber, expectedFlightNumberString)
-        XCTAssertEqual(launchViewModel.details, validDetails)
-        XCTAssertEqual(launchViewModel.missionName, validMissionName)
-        XCTAssertEqual(launchViewModel.launchResult, NSLocalizedString("Success", comment: "Success"))
+        XCTAssertEqual(launchViewModel.details, launch.details)
+        XCTAssertEqual(launchViewModel.missionName, launch.missionName)
+        XCTAssertEqual(launchViewModel.launchResult, NSLocalizedString("Failed", comment: "Failed"))
         XCTAssertEqual(launchViewModel.missionPatchImage, UIImage(named: "NoMissionPatch"))
     }
     
     
     func test_Nil_Details() {
-        let launch = Launch(flightNumber: validFlightNumber, missionName: validMissionName, details: nil, launchSuccess: true, missionPatchImageURL: validMissionPatchImageURL)
+        let launch = launches.last!
         let launchViewModel = LaunchViewModel(from: launch)
-        
+
         let expectedDetails =  NSLocalizedString("No mission details", comment: "No mission details")
         XCTAssertEqual(launchViewModel.details, expectedDetails)
     }
-    
+
     
     func test_Nil_LaunchSuccess() {
+        let launch = launches.last!
         let expectedLaunchResult =  NSLocalizedString("Not launched yet", comment: "Not launched yet")
-        testLaunchResultHelper(launchSuccess: nil, expectedResult: expectedLaunchResult)
-    }
-    
-    
-    func test_LaunchFailed() {
-        let expectedLaunchResult =  NSLocalizedString("Failed", comment: "Failed")
 
-        testLaunchResultHelper(launchSuccess: false, expectedResult: expectedLaunchResult)
+        testLaunchHelper(expectedLaunchResult: expectedLaunchResult, launch: launch)
     }
     
     
-    // MARK: - Private Section -
-    private func testLaunchResultHelper(launchSuccess: Bool?, expectedResult: String) {
-        let launch = Launch(flightNumber: validFlightNumber, missionName: validMissionName, details: validDetails, launchSuccess: launchSuccess, missionPatchImageURL: validMissionPatchImageURL)
+    func test_LaunchSucceeded() {
+        let launch = launches[5]
+        let expectedLaunchResult =  NSLocalizedString("Success", comment: "Success")
+
+        testLaunchHelper(expectedLaunchResult: expectedLaunchResult, launch: launch)
+    }
+
+
+    // MARK: - Private section -
+    private func testLaunchHelper(expectedLaunchResult: String, launch: Launch) {
         let launchViewModel = LaunchViewModel(from: launch)
-        XCTAssertEqual(launchViewModel.launchResult, expectedResult)
+        XCTAssertEqual(launchViewModel.launchResult, expectedLaunchResult)
     }
 }
