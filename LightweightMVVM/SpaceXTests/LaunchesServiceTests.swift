@@ -15,7 +15,6 @@ class LaunchesServiceTests: XCTestCase {
     
     override func setUp() {
         launchesService = LaunchesService(launchesDataManager: FakeLaunchesDataManager())
-
     }
 
     override func tearDown() {
@@ -29,7 +28,7 @@ class LaunchesServiceTests: XCTestCase {
             case .failure:
                 XCTFail("received .failure instead of .success")
             case .success(let launches):
-                XCTAssert(!launches.isEmpty, "expected non emtpy launches array")
+                XCTAssert(!launches.isEmpty, "expected non empty launches array")
             }
         }
     }

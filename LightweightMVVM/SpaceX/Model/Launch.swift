@@ -12,22 +12,27 @@ import Foundation
 struct Launch {
     let flightNumber: Int
     let missionName: String
+    let upcoming: Bool
+    let launchYear: String
+    let launchDate: String //ISO 8601 formatted date
     let details: String?
     let launchSuccess: Bool?
-    let missionPatchImageURL: URL?
+    let rocket: Rocket
+    let links: Links
 }
+
 
 extension Launch: Codable {
     enum CodingKeys: String, CodingKey {
         case flightNumber = "flight_number"
         case missionName = "mission_name"
+        case launchYear = "launch_year"
+        case launchDate = "launch_date_utc"
         case launchSuccess = "launch_success"
+        case upcoming
         case details
         case links
-        
-        enum LinksKeys: String, CodingKey {
-            case missionPatchImageURL = "mission_patch"
-        }
+        case rocket
     }
     
     
@@ -35,11 +40,13 @@ extension Launch: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         flightNumber = try container.decode(Int.self, forKey: .flightNumber)
         missionName = try container.decode(String.self, forKey: .missionName)
+        upcoming = try container.decode(Bool.self, forKey: .upcoming)
+        launchYear = try container.decode(String.self, forKey: .launchYear)
+        launchDate = try container.decode(String.self, forKey: .launchDate)
         details = try container.decodeIfPresent(String.self, forKey: .details)
         launchSuccess = try container.decodeIfPresent(Bool.self, forKey: .launchSuccess)
-        
-        let linksContainer = try container.nestedContainer(keyedBy: CodingKeys.LinksKeys.self, forKey: .links)
-        missionPatchImageURL = try linksContainer.decodeIfPresent(URL.self, forKey: .missionPatchImageURL)
+        rocket = try container.decode(Rocket.self, forKey: .rocket)
+        links = try container.decode(Links.self, forKey: .links)
     }
     
     
@@ -47,9 +54,12 @@ extension Launch: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(flightNumber, forKey: .flightNumber)
         try container.encode(missionName, forKey: .missionName)
+        try container.encode(upcoming, forKey: .upcoming)
+        try container.encode(launchYear, forKey: .launchYear)
+        try container.encode(launchDate, forKey: .launchDate)
         try container.encodeIfPresent(details, forKey: .details)
-        
-        var linksContainer = container.nestedContainer(keyedBy: CodingKeys.LinksKeys.self, forKey: .links)
-        try linksContainer.encodeIfPresent(missionPatchImageURL, forKey: .missionPatchImageURL)
+        try container.encodeIfPresent(launchSuccess, forKey: .launchSuccess)
+        try container.encode(rocket, forKey: .rocket)
+        try container.encode(links, forKey: .links)
     }
 }
