@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/Dario-Gasquez/spacex-launches.svg)](https://travis-ci.com/Dario-Gasquez/spacex-launches)
 
 # Space X Launches
-A small iOS sample app that retrieves and shows Space X launches information
+A small iOS sample app that retrieves and shows Space X launches information by consuming the information provided by the [Space X API](https://github.com/r-spacex/SpaceX-API).
 
 ## Install Instructions
 1. Download the zip file or clone the project from [here](https://github.com/Dario-Gasquez/spacex-launches)
