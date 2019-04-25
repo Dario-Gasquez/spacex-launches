@@ -17,6 +17,25 @@ NOTES:
 I tried to strike a balance between choosing a robust architecture on one hand and avoiding needless complexity or solution over-design on the other.
 A lightweight MVVM architecture was used in the creation of Space X Launches. Functionality was divided in the following layers (which match some of the Xcode project groups names): `Model`, `ViewModel`, `Service`, `Persistence`, `Networking` and `ViewController`.
 
+#### Lightweight MVVM
+I will elaborate briefly on what I mean by this. The decision to use the *lightweight* term lies mainly in a couple of reasons:
+- There is no data binding mechanism between the viewModel and the model. This would allow, for example, to update the model based on 
+user actions (this is not needed in this application as all the screens / views are "read only").
+- The viewModel is mainly a data type responsible to adapt the model to the needs of a particular view and only contains the specific presentation logic for that view. It does not contain business logic, interaction with the networking layer or other functionality. I think this is good to keep the viewModel's role consistent with its name, and additionaly avoids violating the [Single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).
+
+##### ViewModel approach: additional references
+The viewModel approach for this project is inspired by those presented in the following articles:
+
+[Our View on View Models](https://blog.lickability.com/our-view-on-view-models-4bb1d0675038)
+
+[The MVVM Pattern for iOS Apps in Swift: a Pragmatic Approach](https://matteomanferdini.com/mvvm-pattern-ios-swift/)
+
+Additional food for thought regarding pros and cons of MVVM:
+
+[MVVM is Not Very Good](http://khanlou.com/2015/12/mvvm-is-not-very-good/)
+
+[Advantages and disadvantages of M-V-VM](https://blogs.msdn.microsoft.com/johngossman/2006/03/04/advantages-and-disadvantages-of-m-v-vm/)
+
 ### Third Party Libraries
 Although I try to keep the use of external libraries to a minimum (due to the risks related to having external dependencies), some of them allow us to save effort and avoid us having to reinvent the wheel.
 
