@@ -1,5 +1,5 @@
 //
-//  CustomFlowLayout.swift
+//  ParallaxFlowLayout.swift
 //  SpaceX
 //
 //  Created by Dario on 5/18/19.
@@ -20,7 +20,7 @@ final class ParallaxFlowLayout: UICollectionViewFlowLayout {
 
         guard let collectionView = collectionView else { return }
 
-        // 2 colums configuration calculations
+        // 2 columns configuration calculations
         let topInset: CGFloat = 8.0
         let bottomInset: CGFloat = 8.0
         let leftInset: CGFloat = 8.0
