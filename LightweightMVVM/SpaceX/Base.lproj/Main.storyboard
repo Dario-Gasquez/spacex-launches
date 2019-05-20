@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1d-Ir-PUq">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,13 +16,13 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Launches" customClass="LaunchesViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lSm-b2-o5C" userLabel="Launches View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="S4U-ht-Vqz">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="S4U-ht-Vqz" customClass="ParallaxFlowLayout" customModule="SpaceX" customModuleProvider="target">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -37,18 +37,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="NoMissionPatch" translatesAutoresizingMaskIntoConstraints="NO" id="gOl-Rd-X6E">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="36"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="19"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41O-I1-dHi" userLabel="Mission Name">
-                                                    <rect key="frame" x="8" y="44" width="84" height="33.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="8" y="27" width="84" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXa-oO-mLk" userLabel="Flight Number">
-                                                    <rect key="frame" x="8" y="85.5" width="84" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="8" y="78" width="84" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -58,7 +58,7 @@
                                             <constraint firstItem="41O-I1-dHi" firstAttribute="leading" secondItem="coy-l5-bOH" secondAttribute="leadingMargin" id="RHc-pP-WUG"/>
                                             <constraint firstItem="KXa-oO-mLk" firstAttribute="leading" secondItem="coy-l5-bOH" secondAttribute="leadingMargin" id="Z7r-9F-N81"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="41O-I1-dHi" secondAttribute="trailing" id="dKL-KY-sau"/>
-                                            <constraint firstAttribute="bottom" secondItem="KXa-oO-mLk" secondAttribute="bottom" id="dNy-eP-d04"/>
+                                            <constraint firstAttribute="bottom" secondItem="KXa-oO-mLk" secondAttribute="bottom" constant="5" id="dNy-eP-d04"/>
                                             <constraint firstItem="41O-I1-dHi" firstAttribute="top" secondItem="gOl-Rd-X6E" secondAttribute="bottom" constant="8" symbolic="YES" id="dTp-XX-hqs"/>
                                             <constraint firstAttribute="trailing" secondItem="gOl-Rd-X6E" secondAttribute="trailing" id="gm3-V9-8Wx"/>
                                             <constraint firstItem="KXa-oO-mLk" firstAttribute="top" secondItem="41O-I1-dHi" secondAttribute="bottom" constant="8" symbolic="YES" id="rHO-U4-Oc1"/>
@@ -78,8 +78,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="KLb-5J-e07"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OTC-Ro-7CU">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="OTC-Ro-7CU">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,26 +110,26 @@
             <objects>
                 <viewController title="Launch Details" id="wUb-cL-rX2" userLabel="Launch Details" customClass="LaunchDetailsViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LZG-TU-bXA" customClass="LaunchDetailsView" customModule="SpaceX" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-Lh-nJE" userLabel="MissionPatchImageView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="269.5"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="304"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="17R-6e-Twt">
-                                <rect key="frame" x="0.0" y="333.5" width="375" height="86"/>
+                                <rect key="frame" x="0.0" y="368" width="414" height="85.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iv7-Wo-9LJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="28.666666666666668"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Mission Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-bA-fOW" userLabel="Mission Name Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="281.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="28.666666666666668"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-GR-FeT">
-                                                <rect key="frame" x="289.5" y="4.5" width="85.5" height="20.5"/>
+                                                <rect key="frame" x="319" y="4.3333333333333144" width="95" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -137,13 +137,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight nr: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-5x-RDd">
-                                        <rect key="frame" x="0.0" y="37" width="81.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="36.666666666666686" width="81.666666666666671" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVZ-7y-H0w" userLabel="Mission Description Label">
-                                        <rect key="frame" x="0.0" y="65.5" width="88" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="65" width="87.666666666666671" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q1d-Ir-PUq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="l5L-hE-eZh">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
