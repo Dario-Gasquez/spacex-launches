@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A300F057229303980066B595 /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F056229303980066B595 /* ParallaxFlowLayout.swift */; };
+		A300F05A229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */; };
 		A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A312FBA4223F70F20003100D /* Kingfisher.framework */; };
 		A314B98C22652C06002F9F70 /* LaunchesURLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */; };
 		A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */; };
@@ -58,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A300F056229303980066B595 /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
+		A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewParallaxLayoutAttributes.swift; sourceTree = "<group>"; };
 		A312FBA4223F70F20003100D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Kingfisher.framework.dSYM; path = Carthage/Build/iOS/Kingfisher.framework.dSYM; sourceTree = "<group>"; };
 		A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesURLRequestFactory.swift; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A300F058229303E80066B595 /* CustomLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A300F056229303980066B595 /* ParallaxFlowLayout.swift */,
+				A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */,
+			);
+			path = CustomLayout;
+			sourceTree = "<group>";
+		};
 		A312FBA3223F70F20003100D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +186,7 @@
 		A3C76A40223B5A010053450F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A300F058229303E80066B595 /* CustomLayout */,
 				A3C76A41223B5A1D0053450F /* LaunchCollectionViewCell.swift */,
 				A38C88F5223C752600ACB52F /* LaunchDetailsView.swift */,
 			);
@@ -453,6 +467,7 @@
 				A3C76A3E223B4AA80053450F /* LaunchesService.swift in Sources */,
 				A3C47CB9223EB666007AD451 /* LaunchesDataStore.swift in Sources */,
 				A34684142264F876008171BC /* URLRequestFactory.swift in Sources */,
+				A300F05A229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift in Sources */,
 				A314B990226533A0002F9F70 /* QueueManager.swift in Sources */,
 				A3F29522226F8C7A00B8E16F /* Rocket.swift in Sources */,
 				A314B99222653646002F9F70 /* LaunchesDataManager.swift in Sources */,
@@ -461,6 +476,7 @@
 				A3F29524226F8C9900B8E16F /* Links.swift in Sources */,
 				A3FDE484223ABC7F0052C2AF /* AppDelegate.swift in Sources */,
 				A396F407223B03E600B5F94A /* LaunchViewModel.swift in Sources */,
+				A300F057229303980066B595 /* ParallaxFlowLayout.swift in Sources */,
 				A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */,
 				A3C76A42223B5A1D0053450F /* LaunchCollectionViewCell.swift in Sources */,
 			);

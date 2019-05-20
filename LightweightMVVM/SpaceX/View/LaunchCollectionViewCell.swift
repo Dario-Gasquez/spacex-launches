@@ -15,6 +15,31 @@ final class LaunchCollectionViewCell: UICollectionViewCell {
             updateUI()
         }
     }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+        
+        if let parallax = (layoutAttributes as? CollectionViewParallaxLayoutAttributes)?.parallax {
+            missionPatchImageView.transform = parallax
+        }
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        configureBorder()
+    }
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        missionPatchImageView.transform = .identity
+        missionPatchImageView.image = nil
+        missionName.text = nil
+        flightNumber.text = nil
+    }
 
     // MARK: - Private Section -
     @IBOutlet private weak var missionName: UILabel!
@@ -25,5 +50,12 @@ final class LaunchCollectionViewCell: UICollectionViewCell {
         missionName.text = launchViewModel?.missionName
         flightNumber.text = launchViewModel?.flightNumber
         missionPatchImageView.image = launchViewModel?.missionPatchImage
+    }
+    
+    
+    private func configureBorder() {
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.cornerRadius = 15
     }
 }
