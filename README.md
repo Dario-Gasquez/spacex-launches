@@ -71,6 +71,8 @@ The user is able to refresh the information shown in the launches list screen by
 ### 5. Parallax Effect
 When the user scrolls in the launches screen, a parallax effect can be seen. This functionality is provided by `ParallaxFlowLayout` (a custom flow layout class). An approach with less coding was possible, but it involved adding the parallax code to the `LaunchesViewController` which was not desired. This approach also gives us finer control on the desired collection view layout and visual effects.
 
+### 6. Launch web article
+In the launch details screen the launch's web article is displayed (if available). This was achieved by adding a web view (`WKWebView`) below the mission details label in the Main storyboard. Additonal changes were made as required for example to `LaunchViewModel` and `LaunchDetailsView`.
 
 ## Troubleshooting
 ### Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler (Kingfisher)
