@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A300F057229303980066B595 /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F056229303980066B595 /* ParallaxFlowLayout.swift */; };
+		A300F05A229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */; };
 		A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A312FBA4223F70F20003100D /* Kingfisher.framework */; };
 		A314B98C22652C06002F9F70 /* LaunchesURLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */; };
 		A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */; };
@@ -25,6 +27,7 @@
 		A3C47CC1223F03D8007AD451 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3C47CC3223F03D8007AD451 /* Localizable.strings */; };
 		A3C76A3E223B4AA80053450F /* LaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C76A3D223B4AA80053450F /* LaunchesService.swift */; };
 		A3C76A42223B5A1D0053450F /* LaunchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C76A41223B5A1D0053450F /* LaunchCollectionViewCell.swift */; };
+		A3CA9C4122947418008E2A5D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA9C4022947418008E2A5D /* WebKit.framework */; };
 		A3D666D92240413000507E09 /* LaunchesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D666D82240413000507E09 /* LaunchesServiceTests.swift */; };
 		A3D666DC2240417A00507E09 /* launches.json in Resources */ = {isa = PBXBuildFile; fileRef = A3D666DB2240417A00507E09 /* launches.json */; };
 		A3F29520226E3B7300B8E16F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2951F226E3B7300B8E16F /* Utilities.swift */; };
@@ -58,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A300F056229303980066B595 /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
+		A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewParallaxLayoutAttributes.swift; sourceTree = "<group>"; };
 		A312FBA4223F70F20003100D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Kingfisher.framework.dSYM; path = Carthage/Build/iOS/Kingfisher.framework.dSYM; sourceTree = "<group>"; };
 		A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesURLRequestFactory.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 		A3C47CC6223F0536007AD451 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3C76A3D223B4AA80053450F /* LaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesService.swift; sourceTree = "<group>"; };
 		A3C76A41223B5A1D0053450F /* LaunchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCollectionViewCell.swift; sourceTree = "<group>"; };
+		A3CA9C4022947418008E2A5D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A3D666D82240413000507E09 /* LaunchesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesServiceTests.swift; sourceTree = "<group>"; };
 		A3D666DB2240417A00507E09 /* launches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launches.json; sourceTree = "<group>"; };
 		A3F2951F226E3B7300B8E16F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CA9C4122947418008E2A5D /* WebKit.framework in Frameworks */,
 				A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,9 +134,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A300F058229303E80066B595 /* CustomLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A300F056229303980066B595 /* ParallaxFlowLayout.swift */,
+				A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */,
+			);
+			path = CustomLayout;
+			sourceTree = "<group>";
+		};
 		A312FBA3223F70F20003100D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3CA9C4022947418008E2A5D /* WebKit.framework */,
 				A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */,
 				A312FBA4223F70F20003100D /* Kingfisher.framework */,
 			);
@@ -173,6 +190,7 @@
 		A3C76A40223B5A010053450F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A300F058229303E80066B595 /* CustomLayout */,
 				A3C76A41223B5A1D0053450F /* LaunchCollectionViewCell.swift */,
 				A38C88F5223C752600ACB52F /* LaunchDetailsView.swift */,
 			);
@@ -453,6 +471,7 @@
 				A3C76A3E223B4AA80053450F /* LaunchesService.swift in Sources */,
 				A3C47CB9223EB666007AD451 /* LaunchesDataStore.swift in Sources */,
 				A34684142264F876008171BC /* URLRequestFactory.swift in Sources */,
+				A300F05A229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift in Sources */,
 				A314B990226533A0002F9F70 /* QueueManager.swift in Sources */,
 				A3F29522226F8C7A00B8E16F /* Rocket.swift in Sources */,
 				A314B99222653646002F9F70 /* LaunchesDataManager.swift in Sources */,
@@ -461,6 +480,7 @@
 				A3F29524226F8C9900B8E16F /* Links.swift in Sources */,
 				A3FDE484223ABC7F0052C2AF /* AppDelegate.swift in Sources */,
 				A396F407223B03E600B5F94A /* LaunchViewModel.swift in Sources */,
+				A300F057229303980066B595 /* ParallaxFlowLayout.swift in Sources */,
 				A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */,
 				A3C76A42223B5A1D0053450F /* LaunchCollectionViewCell.swift in Sources */,
 			);

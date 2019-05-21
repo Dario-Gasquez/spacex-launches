@@ -16,7 +16,8 @@ struct LaunchViewModel {
     let details: String
     let launchResult: String
     var missionPatchImage: UIImage = #imageLiteral(resourceName: "NoMissionPatch") //NOTE: as an alternative this could be a Data property, to avoid UIKit coupling for reusing this class in macOS for example
-
+    var articleURL: URL?
+    
     init(from launch: Launch) {
         flightNumber = NSLocalizedString("Flight nr.", comment: "Flight number") + ": " + String(launch.flightNumber)
         missionName =  launch.missionName
@@ -27,6 +28,8 @@ struct LaunchViewModel {
         } else {
             launchResult = NSLocalizedString("Not launched yet", comment: "Not launched yet")
         }
+        
+        articleURL = launch.links.articleLink
     }
     
     
