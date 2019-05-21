@@ -159,6 +159,9 @@
                                                     <wkPreferences key="preferences"/>
                                                 </wkWebViewConfiguration>
                                             </wkWebView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZhM-es-iPM" userLabel="WebView Activity Indicator">
+                                                <rect key="frame" x="197" y="379.33333333333331" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="yVZ-7y-H0w" firstAttribute="leading" secondItem="xec-qJ-axZ" secondAttribute="leadingMargin" id="5Dq-rw-Klg"/>
@@ -171,12 +174,14 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="raZ-GR-FeT" secondAttribute="trailing" id="R02-dh-qBg"/>
                                             <constraint firstItem="bTy-5x-RDd" firstAttribute="top" secondItem="vdf-bA-fOW" secondAttribute="bottom" constant="8" symbolic="YES" id="WHg-Ad-gRq"/>
                                             <constraint firstItem="Nfd-Lh-nJE" firstAttribute="leading" secondItem="xec-qJ-axZ" secondAttribute="leading" id="Xmx-KN-1bA"/>
+                                            <constraint firstItem="ZhM-es-iPM" firstAttribute="top" secondItem="HNl-NK-gLX" secondAttribute="topMargin" id="Y49-4c-BUG"/>
                                             <constraint firstItem="HNl-NK-gLX" firstAttribute="top" secondItem="yVZ-7y-H0w" secondAttribute="bottom" constant="8" symbolic="YES" id="c5g-d2-mXl"/>
                                             <constraint firstItem="HNl-NK-gLX" firstAttribute="leading" secondItem="xec-qJ-axZ" secondAttribute="leadingMargin" id="j9j-2A-TdS"/>
                                             <constraint firstItem="raZ-GR-FeT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vdf-bA-fOW" secondAttribute="trailing" constant="8" symbolic="YES" id="kf8-O1-4g9"/>
                                             <constraint firstItem="raZ-GR-FeT" firstAttribute="centerY" secondItem="vdf-bA-fOW" secondAttribute="centerY" id="nU7-oM-uNs"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="HNl-NK-gLX" secondAttribute="trailing" id="tPL-fe-iE0"/>
                                             <constraint firstItem="vdf-bA-fOW" firstAttribute="leading" secondItem="xec-qJ-axZ" secondAttribute="leadingMargin" id="vWM-l4-ef4"/>
+                                            <constraint firstItem="ZhM-es-iPM" firstAttribute="centerX" secondItem="HNl-NK-gLX" secondAttribute="centerX" id="xP3-KP-FkJ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="yVZ-7y-H0w" secondAttribute="trailing" id="yU1-XC-xqo"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="bTy-5x-RDd" secondAttribute="trailing" id="yU9-h7-Kyu"/>
                                         </constraints>
@@ -207,6 +212,7 @@
                             <outlet property="missionResultLabel" destination="raZ-GR-FeT" id="hvP-OH-4UI"/>
                             <outlet property="shipImageView" destination="Nfd-Lh-nJE" id="PGr-fv-Zzf"/>
                             <outlet property="webView" destination="HNl-NK-gLX" id="DWp-T4-0X9"/>
+                            <outlet property="webViewActivityIndicator" destination="ZhM-es-iPM" id="WUd-vD-kys"/>
                             <outlet property="webViewHeightConstraint" destination="hS2-JM-9a0" id="xRT-vG-1hK"/>
                         </connections>
                     </view>

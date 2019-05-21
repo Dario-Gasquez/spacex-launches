@@ -31,7 +31,12 @@ class LaunchDetailsView: UIView {
     @IBOutlet private weak var flightNumberLabel: UILabel!
     @IBOutlet private weak var missionDescriptionLabel: UILabel!
 
-    @IBOutlet private weak var webView: WKWebView!
+    @IBOutlet private weak var webView: WKWebView! {
+        didSet {
+            webView.navigationDelegate = self
+        }
+    }
+    @IBOutlet weak var webViewActivityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var webViewHeightConstraint: NSLayoutConstraint!
     
     private func updateUI() {
@@ -44,13 +49,26 @@ class LaunchDetailsView: UIView {
     
     
     private func loadArticle() {
-        guard let articleURL = launchViewModel?.articleURL else {
-            // Hiding the webView is not enough. As we are using AutoLayout reducing the height constraint is needed in order to avoid having an empty, scrollable space.
-            webViewHeightConstraint.constant = 0
-            return
-        }
+
+        // Hide the webView until the webpage has finished loading. As we are using AutoLayout setting isHidden to true is not enough, reducing the height constraint is needed in order to avoid having an empty, scrollable space.
+        webViewHeightConstraint.constant = 0
+
+        guard let articleURL = launchViewModel?.articleURL else { return }
         
-        let myRequest = URLRequest(url: articleURL)
-        webView.load(myRequest)
+        let webArticleRequest = URLRequest(url: articleURL)
+        webView.load(webArticleRequest)
+        webViewActivityIndicator.startAnimating()
+    }
+}
+
+
+extension LaunchDetailsView: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webViewActivityIndicator.stopAnimating()
+        webViewHeightConstraint.constant = 500
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        webViewActivityIndicator.stopAnimating()
     }
 }
