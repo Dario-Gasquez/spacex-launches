@@ -32,6 +32,7 @@ class LaunchViewModelTests: XCTestCase {
         XCTAssertEqual(launchViewModel.missionName, launch.missionName)
         XCTAssertEqual(launchViewModel.launchResult, NSLocalizedString("Failed", comment: "Failed"))
         XCTAssertEqual(launchViewModel.missionPatchImage, UIImage(named: "NoMissionPatch"))
+        XCTAssertEqual(launchViewModel.articleURL, launch.links.articleLink)
     }
     
     
