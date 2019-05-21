@@ -32,6 +32,7 @@ class LaunchDetailsView: UIView {
     @IBOutlet private weak var missionDescriptionLabel: UILabel!
 
     @IBOutlet private weak var webView: WKWebView!
+    @IBOutlet private weak var webViewHeightConstraint: NSLayoutConstraint!
     
     private func updateUI() {
         missionNameLabel.text = launchViewModel?.missionName
@@ -43,8 +44,13 @@ class LaunchDetailsView: UIView {
     
     
     private func loadArticle() {
-        let myURL = URL(string:"https://www.nasaspaceflight.com/2013/12/spacex-falcon-9-v1-1-milestone-ses-8-launch/")
-        let myRequest = URLRequest(url: myURL!)
+        guard let articleURL = launchViewModel?.articleURL else {
+            // Hiding the webView is not enough. As we are using AutoLayout reducing the height constraint is needed in order to avoid having an empty, scrollable space.
+            webViewHeightConstraint.constant = 0
+            return
+        }
+        
+        let myRequest = URLRequest(url: articleURL)
         webView.load(myRequest)
     }
 }
