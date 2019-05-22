@@ -74,6 +74,9 @@ When the user scrolls in the launches screen, a parallax effect can be seen. Thi
 ### 6. Launch web article
 In the launch details screen the launch's web article is displayed (if available). This was achieved by adding a web view (`WKWebView`) below the mission details label in the Main storyboard. Additonal changes were made as required for example to `LaunchViewModel` and `LaunchDetailsView`.
 
+### 7. Mission Patch Image Stretch Effect
+If the content in the launch details screen is scrollable, then the mission patch image is stretched when the user scrolls down. This was implemented in `LaunchDetailsView` by aplying a scale and translate `CGAffineTransform` when the scroll down is detected.
+
 ## Troubleshooting
 ### Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler (Kingfisher)
 Update the library using the following command:
