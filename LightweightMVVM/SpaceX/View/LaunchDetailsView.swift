@@ -11,7 +11,6 @@ import WebKit
 
 class LaunchDetailsView: UIView {
 
-
     var launchViewModel: LaunchViewModel? {
         didSet {
             updateUI()
@@ -20,22 +19,25 @@ class LaunchDetailsView: UIView {
     }
     
     // MARK: - Private Section -
-    /*
-     let flightNumber: String
-     let missionName: String
-     let launchSuccess: String
-     */
-    @IBOutlet private weak var shipImageView: UIImageView!
+    @IBOutlet private weak var missionPatchImageView: UIImageView!
+    @IBOutlet private weak var missionPatchImageHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var missionNameLabel: UILabel!
     @IBOutlet private weak var missionResultLabel: UILabel!
     @IBOutlet private weak var flightNumberLabel: UILabel!
     @IBOutlet private weak var missionDescriptionLabel: UILabel!
 
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.delegate = self
+        }
+    }
+    
     @IBOutlet private weak var webView: WKWebView! {
         didSet {
             webView.navigationDelegate = self
         }
     }
+    
     @IBOutlet weak var webViewActivityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var webViewHeightConstraint: NSLayoutConstraint!
     
@@ -44,7 +46,7 @@ class LaunchDetailsView: UIView {
         missionResultLabel.attributedText = launchViewModel?.attributedResult
         flightNumberLabel.text = launchViewModel?.flightNumber
         missionDescriptionLabel.text = launchViewModel?.details
-        shipImageView.image = launchViewModel?.missionPatchImage
+        missionPatchImageView.image = launchViewModel?.missionPatchImage
     }
     
     
@@ -70,5 +72,19 @@ extension LaunchDetailsView: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         webViewActivityIndicator.stopAnimating()
+    }
+}
+
+
+extension LaunchDetailsView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y <= 0) {
+            let yOffset = scrollView.contentOffset.y
+            let translate = CGAffineTransform(translationX: 0, y: yOffset / 2.0)
+            let originalHeight = missionPatchImageHeightConstraint.constant
+            let scaleFactor = (originalHeight - yOffset) / originalHeight
+            let translateAndScale = translate.concatenating(CGAffineTransform(scaleX: scaleFactor, y: scaleFactor))
+            missionPatchImageView.transform = translateAndScale
+        }
     }
 }

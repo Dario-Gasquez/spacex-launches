@@ -125,12 +125,12 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Mission Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-bA-fOW" userLabel="Mission Name Label">
-                                                <rect key="frame" x="8" y="278" width="153.66666666666666" height="28.666666666666686"/>
+                                                <rect key="frame" x="8" y="278" width="347" height="28.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-GR-FeT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-GR-FeT">
                                                 <rect key="frame" x="363" y="282.33333333333331" width="43" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,7 +177,7 @@
                                             <constraint firstItem="ZhM-es-iPM" firstAttribute="top" secondItem="HNl-NK-gLX" secondAttribute="topMargin" id="Y49-4c-BUG"/>
                                             <constraint firstItem="HNl-NK-gLX" firstAttribute="top" secondItem="yVZ-7y-H0w" secondAttribute="bottom" constant="8" symbolic="YES" id="c5g-d2-mXl"/>
                                             <constraint firstItem="HNl-NK-gLX" firstAttribute="leading" secondItem="xec-qJ-axZ" secondAttribute="leadingMargin" id="j9j-2A-TdS"/>
-                                            <constraint firstItem="raZ-GR-FeT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vdf-bA-fOW" secondAttribute="trailing" constant="8" symbolic="YES" id="kf8-O1-4g9"/>
+                                            <constraint firstItem="raZ-GR-FeT" firstAttribute="leading" secondItem="vdf-bA-fOW" secondAttribute="trailing" constant="8" symbolic="YES" id="kf8-O1-4g9"/>
                                             <constraint firstItem="raZ-GR-FeT" firstAttribute="centerY" secondItem="vdf-bA-fOW" secondAttribute="centerY" id="nU7-oM-uNs"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="HNl-NK-gLX" secondAttribute="trailing" id="tPL-fe-iE0"/>
                                             <constraint firstItem="vdf-bA-fOW" firstAttribute="leading" secondItem="xec-qJ-axZ" secondAttribute="leadingMargin" id="vWM-l4-ef4"/>
@@ -199,7 +199,6 @@
                         <constraints>
                             <constraint firstItem="6a7-W7-nAA" firstAttribute="trailing" secondItem="GLk-um-j4E" secondAttribute="trailing" id="AIN-tr-gF2"/>
                             <constraint firstItem="6a7-W7-nAA" firstAttribute="bottom" secondItem="GLk-um-j4E" secondAttribute="bottom" id="MuE-nq-q2H"/>
-                            <constraint firstItem="xec-qJ-axZ" firstAttribute="height" secondItem="LZG-TU-bXA" secondAttribute="height" priority="250" id="a4W-8q-LFN"/>
                             <constraint firstItem="6a7-W7-nAA" firstAttribute="leading" secondItem="GLk-um-j4E" secondAttribute="leading" id="kys-lz-fIa"/>
                             <constraint firstItem="6a7-W7-nAA" firstAttribute="top" secondItem="GLk-um-j4E" secondAttribute="top" id="tWb-fB-Ob4"/>
                             <constraint firstItem="xec-qJ-axZ" firstAttribute="width" secondItem="LZG-TU-bXA" secondAttribute="width" id="yov-jB-wy3"/>
@@ -209,8 +208,10 @@
                             <outlet property="flightNumberLabel" destination="bTy-5x-RDd" id="c4J-RI-C2t"/>
                             <outlet property="missionDescriptionLabel" destination="yVZ-7y-H0w" id="cbO-2V-LvA"/>
                             <outlet property="missionNameLabel" destination="vdf-bA-fOW" id="q1x-1a-X11"/>
+                            <outlet property="missionPatchImageHeightConstraint" destination="WfK-rg-xfX" id="2V3-3f-TF3"/>
+                            <outlet property="missionPatchImageView" destination="Nfd-Lh-nJE" id="PGr-fv-Zzf"/>
                             <outlet property="missionResultLabel" destination="raZ-GR-FeT" id="hvP-OH-4UI"/>
-                            <outlet property="shipImageView" destination="Nfd-Lh-nJE" id="PGr-fv-Zzf"/>
+                            <outlet property="scrollView" destination="6a7-W7-nAA" id="jwJ-2N-ikR"/>
                             <outlet property="webView" destination="HNl-NK-gLX" id="DWp-T4-0X9"/>
                             <outlet property="webViewActivityIndicator" destination="ZhM-es-iPM" id="WUd-vD-kys"/>
                             <outlet property="webViewHeightConstraint" destination="hS2-JM-9a0" id="xRT-vG-1hK"/>
