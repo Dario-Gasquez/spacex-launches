@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1d-Ir-PUq">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Launches" customClass="LaunchesViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lSm-b2-o5C" userLabel="Launches View" customClass="MultiColumnCollectionView" customModule="SpaceX" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="S4U-ht-Vqz" customClass="ParallaxFlowLayout" customModule="SpaceX" customModuleProvider="target">
                                     <size key="itemSize" width="100" height="100"/>
@@ -79,43 +79,39 @@
                                 </connections>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="OTC-Ro-7CU">
-                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
                             </activityIndicatorView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBN-s7-i8K">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem image="OneColumnIcon" id="Ivf-fA-p1z">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="didTapOneColumnButton:" destination="BYZ-38-t0r" id="bPj-33-oyE"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="0od-bo-0q8"/>
-                                    <barButtonItem image="TwoColumnsIcon" id="pGe-JX-RZt">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="didTapTwoColumnsButton:" destination="BYZ-38-t0r" id="FMA-sZ-HAF"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" name="SpaceBlue"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lSm-b2-o5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Iy-YC-peI"/>
-                            <constraint firstItem="lSm-b2-o5C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8xl-e8-O8C"/>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Iy-YC-peI"/>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="8xl-e8-O8C"/>
                             <constraint firstItem="OTC-Ro-7CU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YPv-mj-PsB"/>
                             <constraint firstItem="OTC-Ro-7CU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gWx-4K-TtG"/>
-                            <constraint firstItem="lSm-b2-o5C" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hdv-fO-FYb"/>
-                            <constraint firstItem="lSm-b2-o5C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="leY-5D-MOZ"/>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="hdv-fO-FYb"/>
+                            <constraint firstItem="lSm-b2-o5C" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="leY-5D-MOZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem image="OneColumnIcon" id="Ivf-fA-p1z">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapOneColumnButton:" destination="BYZ-38-t0r" id="bPj-33-oyE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="0od-bo-0q8"/>
+                        <barButtonItem image="TwoColumnsIcon" id="pGe-JX-RZt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapTwoColumnsButton:" destination="BYZ-38-t0r" id="FMA-sZ-HAF"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Launches" id="eB3-iX-y8G">
                         <barButtonItem key="backBarButtonItem" title="Back" id="wLC-KB-Xpl"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="OTC-Ro-7CU" id="auF-0L-eEe"/>
                         <outlet property="launchesView" destination="lSm-b2-o5C" id="RY4-U8-awe"/>
@@ -128,49 +124,49 @@
         <!--Launch Details-->
         <scene sceneID="S9O-VQ-9JL">
             <objects>
-                <viewController title="Launch Details" id="wUb-cL-rX2" userLabel="Launch Details" customClass="LaunchDetailsViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Launch Details" hidesBottomBarWhenPushed="YES" id="wUb-cL-rX2" userLabel="Launch Details" customClass="LaunchDetailsViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LZG-TU-bXA" customClass="LaunchDetailsView" customModule="SpaceX" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6a7-W7-nAA">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xec-qJ-axZ" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="879.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="879.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-Lh-nJE" userLabel="MissionPatchImageView">
-                                                <rect key="frame" x="0.0" y="20" width="414" height="250"/>
+                                                <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="WfK-rg-xfX"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Mission Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-bA-fOW" userLabel="Mission Name Label">
-                                                <rect key="frame" x="8" y="278" width="347" height="28.666666666666686"/>
+                                                <rect key="frame" x="8" y="278" width="308" height="28.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-GR-FeT">
-                                                <rect key="frame" x="363" y="282.33333333333331" width="43" height="20.333333333333314"/>
+                                                <rect key="frame" x="324" y="282.33333333333331" width="43" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Flight nr: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-5x-RDd">
-                                                <rect key="frame" x="8" y="314.66666666666669" width="398" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="314.66666666666669" width="359" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVZ-7y-H0w" userLabel="Mission Description Label">
-                                                <rect key="frame" x="8" y="343" width="398" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="343" width="359" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <wkWebView verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="HNl-NK-gLX">
-                                                <rect key="frame" x="8" y="371.33333333333326" width="398" height="500"/>
+                                                <rect key="frame" x="8" y="371.33333333333326" width="359" height="500"/>
                                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="500" id="hS2-JM-9a0"/>
@@ -181,7 +177,7 @@
                                                 </wkWebViewConfiguration>
                                             </wkWebView>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZhM-es-iPM" userLabel="WebView Activity Indicator">
-                                                <rect key="frame" x="197" y="379.33333333333331" width="20" height="20"/>
+                                                <rect key="frame" x="177.66666666666666" y="379.33333333333331" width="20" height="20"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <constraints>
@@ -249,14 +245,19 @@
         <!--Navigation Controller-->
         <scene sceneID="89c-A2-Zqs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q1d-Ir-PUq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Q1d-Ir-PUq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="l5L-hE-eZh">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="SpaceBlue"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0UB-5J-WPB">
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="SpaceBlue"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tZi-nl-whQ"/>
                     </connections>
