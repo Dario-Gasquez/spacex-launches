@@ -9,29 +9,36 @@
 import UIKit
 
 final class ParallaxFlowLayout: UICollectionViewFlowLayout {
-
-    override public class var layoutAttributesClass: AnyClass {
+    
+    func changeToOneColumnLayout() {
+        numberOfColumns = 1
+    }
+    
+    
+    func changeToTwoColumnsLayout() {
+        numberOfColumns = 2
+    }
+    
+    
+    override class var layoutAttributesClass: AnyClass {
         return CollectionViewParallaxLayoutAttributes.self
     }
     
     
     override func prepare() {
         super.prepare()
-
+        
         guard let collectionView = collectionView else { return }
-
-        // 2 columns configuration calculations
-        let topInset: CGFloat = 8.0
-        let bottomInset: CGFloat = 8.0
-        let leftInset: CGFloat = 8.0
-        let rightInset: CGFloat = 8.0
-        let minInterItemSpacing: CGFloat = 10.0
+        
+        let insetValue: CGFloat = (numberOfColumns == 1 ? 0.0 : 8.0)
+        let edgeInsets = UIEdgeInsets(top: insetValue, left: insetValue, bottom: insetValue, right: insetValue)
+        let minInterItemSpacing: CGFloat = (numberOfColumns == 1 ? 0.0 : 10.0)
         let minLineSpacing: CGFloat = 10.0
-        let itemWidth = (collectionView.bounds.width - leftInset - rightInset - minInterItemSpacing) / 2.0
-        let itemHeight = collectionView.bounds.height / 3.0
+        let itemHeight = collectionView.bounds.height / (1.0 + CGFloat(numberOfColumns))
+        let itemWidth = (collectionView.bounds.width - edgeInsets.left - edgeInsets.right - minInterItemSpacing) / CGFloat(numberOfColumns)
         
         self.itemSize = CGSize(width: itemWidth, height:  itemHeight)
-        self.sectionInset = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        self.sectionInset = edgeInsets
         self.minimumLineSpacing = minLineSpacing
         self.minimumInteritemSpacing = minInterItemSpacing
     }
@@ -39,10 +46,10 @@ final class ParallaxFlowLayout: UICollectionViewFlowLayout {
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let attributes = super.layoutAttributesForElements(in: rect) else { return nil }
-
+        
         return attributes.compactMap { $0.copy() as? CollectionViewParallaxLayoutAttributes }.map(addParallaxToAttributes)
     }
-
+    
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
@@ -50,8 +57,17 @@ final class ParallaxFlowLayout: UICollectionViewFlowLayout {
     
     
     // MARK - Private Section -
-    let maxParallaxOffset: CGFloat = 30.0
-
+    private let maxParallaxOffset: CGFloat = 30.0
+    
+    private var numberOfColumns: UInt = 2 {
+        didSet {
+            guard oldValue != numberOfColumns else { return }
+            
+            invalidateLayout()
+        }
+    }
+    
+    
     private func addParallaxToAttributes(_ attributes: CollectionViewParallaxLayoutAttributes) -> UICollectionViewLayoutAttributes {
         guard let collectionView = self.collectionView else { return attributes }
         
@@ -61,9 +77,9 @@ final class ParallaxFlowLayout: UICollectionViewFlowLayout {
         let parallaxOffset = -(maxParallaxOffset * cellDistanceFromCenter) / (halfHeight + halfCellHeight)
         let boundedParallaxOffset = min( max(-maxParallaxOffset, parallaxOffset), maxParallaxOffset)
         let translationY = CGAffineTransform(translationX: 0, y: boundedParallaxOffset)
-
+        
         attributes.parallax = translationY
-
+        
         return attributes
     }
 }

@@ -10,6 +10,10 @@ import UIKit
 
 class LaunchesViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +21,21 @@ class LaunchesViewController: UIViewController {
         addRefreshControl()
         fetchLaunches()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let cell = sender as? LaunchCollectionViewCell else { return }
@@ -34,7 +53,15 @@ class LaunchesViewController: UIViewController {
     // MARK: - Private Section -
     
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet private weak var launchesView: UICollectionView!
+    @IBOutlet private weak var launchesView: MultiColumnCollectionView!
+
+    @IBAction func didTapOneColumnButton(_ sender: UIBarButtonItem) {
+        launchesView.switchTo(.oneColumnMode)
+    }
+    
+    @IBAction func didTapTwoColumnsButton(_ sender: UIBarButtonItem) {
+        launchesView.switchTo(.twoColumnMode)
+    }
     
     private struct Storyboard {
         static let showLaunchDetailsSegueIdentifier = "ShowLaunchDetails"
