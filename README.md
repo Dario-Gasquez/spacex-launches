@@ -66,6 +66,10 @@ If the content in the launch details screen is scrollable, then the mission patc
 In the launches screen there is a new toolbar at the bottom with two buttons that allow the user to change between 1 or 2 columns modes. 
 To implement this feature, a new `UICollectionView` subclass named `MultiColumnCollectionView` was added as well as new image assets for the toolbar buttons, changes in the Main storyboard, `LaunchesViewController` and `ParallaxFlowLayout`.
 
+### 8. Hide/Show navigation and tool bars on swipe
+In the launches screen, when the user swipes up both navigation and tool bars are hidden, and when they swipe down they are shown again.
+A very simple solution using `UINavigationController`'s `hidesBarsOnSwipe` property was implemented. If a different result is required (for example while dragging instead of swiping) a more complex solution would be needed. In this scenario `UIScrollViewDelegate` methods: `scrollViewDidScroll` and/or `scrollViewWillBeginDragging` might come handy.
+
 
 ## Extra Functionality Implemented
 ### 1. i18n & l10n
