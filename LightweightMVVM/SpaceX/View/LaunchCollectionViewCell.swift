@@ -54,7 +54,7 @@ final class LaunchCollectionViewCell: UICollectionViewCell {
     
     
     private func configureBorder() {
-        layer.borderWidth = 1
+        layer.borderWidth = 2
         layer.borderColor = UIColor.lightGray.cgColor
         layer.cornerRadius = 15
     }

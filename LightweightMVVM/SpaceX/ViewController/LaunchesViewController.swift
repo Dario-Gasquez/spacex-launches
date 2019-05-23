@@ -34,7 +34,15 @@ class LaunchesViewController: UIViewController {
     // MARK: - Private Section -
     
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet private weak var launchesView: UICollectionView!
+    @IBOutlet private weak var launchesView: MultiColumnCollectionView!
+
+    @IBAction func didTapOneColumnButton(_ sender: UIBarButtonItem) {
+        launchesView.switchTo(.oneColumnMode)
+    }
+    
+    @IBAction func didTapTwoColumnsButton(_ sender: UIBarButtonItem) {
+        launchesView.switchTo(.twoColumnMode)
+    }
     
     private struct Storyboard {
         static let showLaunchDetailsSegueIdentifier = "ShowLaunchDetails"
