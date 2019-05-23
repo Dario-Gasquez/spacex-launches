@@ -15,6 +15,7 @@
 		A314B990226533A0002F9F70 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98F226533A0002F9F70 /* QueueManager.swift */; };
 		A314B99222653646002F9F70 /* LaunchesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B99122653646002F9F70 /* LaunchesDataManager.swift */; };
 		A314B99422664849002F9F70 /* FakeLaunchesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B99322664849002F9F70 /* FakeLaunchesDataManager.swift */; };
+		A323A1392297125B00A6286C /* MultiColumnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323A1382297125B00A6286C /* MultiColumnCollectionView.swift */; };
 		A34684102264DF5D008171BC /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346840F2264DF5D008171BC /* ConcurrentOperation.swift */; };
 		A34684122264F7AE008171BC /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684112264F7AE008171BC /* RequestConfig.swift */; };
 		A34684142264F876008171BC /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684132264F876008171BC /* URLRequestFactory.swift */; };
@@ -70,6 +71,7 @@
 		A314B98F226533A0002F9F70 /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		A314B99122653646002F9F70 /* LaunchesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesDataManager.swift; sourceTree = "<group>"; };
 		A314B99322664849002F9F70 /* FakeLaunchesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLaunchesDataManager.swift; sourceTree = "<group>"; };
+		A323A1382297125B00A6286C /* MultiColumnCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiColumnCollectionView.swift; sourceTree = "<group>"; };
 		A346840F2264DF5D008171BC /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		A34684112264F7AE008171BC /* RequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfig.swift; sourceTree = "<group>"; };
 		A34684132264F876008171BC /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				A300F058229303E80066B595 /* CustomLayout */,
 				A3C76A41223B5A1D0053450F /* LaunchCollectionViewCell.swift */,
 				A38C88F5223C752600ACB52F /* LaunchDetailsView.swift */,
+				A323A1382297125B00A6286C /* MultiColumnCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				A314B99222653646002F9F70 /* LaunchesDataManager.swift in Sources */,
 				A3FDE4BB223AD28D0052C2AF /* Launch.swift in Sources */,
 				A38C88F4223C72DD00ACB52F /* LaunchDetailsViewController.swift in Sources */,
+				A323A1392297125B00A6286C /* MultiColumnCollectionView.swift in Sources */,
 				A3F29524226F8C9900B8E16F /* Links.swift in Sources */,
 				A3FDE484223ABC7F0052C2AF /* AppDelegate.swift in Sources */,
 				A396F407223B03E600B5F94A /* LaunchViewModel.swift in Sources */,

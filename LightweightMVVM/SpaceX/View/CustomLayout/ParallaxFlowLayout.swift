@@ -10,17 +10,17 @@ import UIKit
 
 final class ParallaxFlowLayout: UICollectionViewFlowLayout {
     
-    public func oneColumnMode() {
+    func changeToOneColumnLayout() {
         numberOfColumns = 1
     }
     
     
-    public func twoColumnsMode() {
+    func changeToTwoColumnsLayout() {
         numberOfColumns = 2
     }
     
     
-    override public class var layoutAttributesClass: AnyClass {
+    override class var layoutAttributesClass: AnyClass {
         return CollectionViewParallaxLayoutAttributes.self
     }
     
