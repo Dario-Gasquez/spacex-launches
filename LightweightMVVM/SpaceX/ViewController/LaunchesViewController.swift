@@ -26,6 +26,8 @@ class LaunchesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setToolbarHidden(false, animated: false)
         navigationController?.hidesBarsOnSwipe = true
     }
     
@@ -34,6 +36,7 @@ class LaunchesViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     

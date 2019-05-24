@@ -86,6 +86,9 @@ NOTE: Other solutions like Core Data or Realm were considered needlessly complex
 The user is able to refresh the information shown in the launches list screen by using the pull to refresh feature.
 
 
+### 7. Mission Patch Image Stretch Effect
+If the content in the launch details screen is scrollable, then the mission patch image is stretched when the user scrolls down. This was implemented in `LaunchDetailsView` by aplying a scale and translate `CGAffineTransform` when the scroll down is detected.
+
 ## Troubleshooting
 ### Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler (Kingfisher)
 Update the library using the following command:
