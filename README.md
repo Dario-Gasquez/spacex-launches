@@ -11,6 +11,7 @@ A small iOS sample app that retrieves and shows Space X launches information by 
 NOTES: 
 - Xcode 10.2 and Swift 5 were used to create this project.
 - Although Carthage was used to include [Kingfisher](https://github.com/onevcat/Kingfisher), you should be able to compile the application without interacting with this dependency manager.
+- This project is configured to run [SwiftLint](https://github.com/realm/SwiftLint), if installed. A few violations have been left on purpose to ilustrate the use of SwiftLint.
 
 ## Description
 ### Architecture
