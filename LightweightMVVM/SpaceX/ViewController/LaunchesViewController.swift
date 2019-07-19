@@ -9,40 +9,41 @@
 import UIKit
 
 class LaunchesViewController: UIViewController {
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = NSLocalizedString("Launches", comment: "launches screen title")
         addRefreshControl()
         fetchLaunches()
     }
-    
-    
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.setToolbarHidden(false, animated: false)
         navigationController?.hidesBarsOnSwipe = true
     }
-    
-    
+
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
-    
-    
+
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(#function)
         guard let cell = sender as? LaunchCollectionViewCell else { return }
-        
+
         switch segue.identifier! {
         case Storyboard.showLaunchDetailsSegueIdentifier:
             guard let launchDetailsVC = segue.destination as? LaunchDetailsViewController else { return }
@@ -51,31 +52,31 @@ class LaunchesViewController: UIViewController {
             break
         }
     }
-    
-    
+
+
     // MARK: - Private Section -
-    
+
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var launchesView: MultiColumnCollectionView!
 
     @IBAction func didTapOneColumnButton(_ sender: UIBarButtonItem) {
         launchesView.switchTo(.oneColumnMode)
     }
-    
+
     @IBAction func didTapTwoColumnsButton(_ sender: UIBarButtonItem) {
         launchesView.switchTo(.twoColumnMode)
     }
-    
+
     private struct Storyboard {
         static let showLaunchDetailsSegueIdentifier = "ShowLaunchDetails"
     }
-    
+
     private var launches: [LaunchViewModel]? {
         didSet { launchesView.reloadData() }
     }
-    
+
     private var launchesService = LaunchesService()
-    
+
     private func fetchLaunches() {
         launchesService.fetchLaunches { (result) in
             DispatchQueue.main.async {
@@ -90,8 +91,8 @@ class LaunchesViewController: UIViewController {
             }
         }
     }
-    
-    
+
+
     private func showErrorMessage() {
         let title = NSLocalizedString("Error fetching launches", comment: "Error alert view: title")
         let message = NSLocalizedString("We could not fetch launches information. Please check your internet connection", comment: "Error alert view: message")
@@ -103,8 +104,8 @@ class LaunchesViewController: UIViewController {
             self.launchesView.refreshControl?.endRefreshing()
         }
     }
-    
-    
+
+
     private func addRefreshControl() {
         let refreshControl = UIRefreshControl()
         let title = NSLocalizedString("Pull to refresh", comment: "pull to refresh text")
@@ -113,14 +114,13 @@ class LaunchesViewController: UIViewController {
             .foregroundColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         ]
         let attributedTitle = NSAttributedString(string: title, attributes: textAttributes)
-        
-        
+
         refreshControl.attributedTitle = attributedTitle
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         launchesView.refreshControl = refreshControl
     }
-    
-    
+
+
     @objc private func refresh() {
         fetchLaunches()
     }
@@ -132,12 +132,12 @@ extension LaunchesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.launches?.count ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LaunchCollectionViewCell", for: indexPath) as? LaunchCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
+
         cell.launchViewModel = launches?[indexPath.row]
         return cell
     }
@@ -150,7 +150,7 @@ extension LaunchesViewController: UICollectionViewDelegate {
             DispatchQueue.main.async {
                 guard let launchVM = launchViewModel  else { return }
                 let launchViewCell = cell as? LaunchCollectionViewCell
-                
+
                 launchViewCell?.launchViewModel = launchVM
             }
         }
