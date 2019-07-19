@@ -14,6 +14,6 @@ func stubLaunchesFromBundle(fileName: String, withExtension: String) -> [Launch]
     let url = bundle.url(forResource: fileName, withExtension: withExtension)
     let data = try! Data(contentsOf: url!, options: .alwaysMapped)
     let launches = try! JSONDecoder().decode([Launch].self, from: data)
-    
+
     return launches
 }

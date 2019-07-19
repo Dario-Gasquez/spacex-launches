@@ -14,7 +14,7 @@ class MultiColumnCollectionView: UICollectionView {
         case oneColumnMode
         case twoColumnMode
     }
-    
+
     func switchTo(_ mode: Mode) {
         guard let parallaxFlowLayout = collectionViewLayout as? ParallaxFlowLayout else {
             assertionFailure("collectionViewLayout is not of the expected type: ParallaxFlowLayout")

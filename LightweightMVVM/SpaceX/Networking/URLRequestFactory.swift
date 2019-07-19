@@ -17,29 +17,29 @@ enum APIError: Error {
 
 
 class URLRequestFactory {
-    
+
     init(config: RequestConfig = RequestConfig()) {
         self.config = config
     }
-    
-    
+
+
     func baseRequest(endPoint: String) -> URLRequest{
         let stringURL = "\(config.APIHost)/\(endPoint)"
-        
+
         let encodedStringURL = stringURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let url = URL(string: encodedStringURL)!
-        
-        return URLRequest(url:url)
+
+        return URLRequest(url: url)
     }
-    
-    
+
+
     func jsonRequest(endPoint: String) -> URLRequest {
         var request = baseRequest(endPoint: endPoint)
-        
+
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
-    
+
     // MARK: - Private Section -
     private let config: RequestConfig
 }

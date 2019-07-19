@@ -9,13 +9,13 @@
 import Foundation
 
 class LaunchesRetrievalOperation: ConcurrentOperation<[Launch]> {
-    
+
     init(session: URLSession = URLSession.shared, launchesRequestFactory: LaunchesURLRequestFactory = LaunchesURLRequestFactory()) {
         self.session = session
         self.launchesRequestFactory = launchesRequestFactory
     }
-    
-    
+
+
     override func main() {
         let urlRequest = launchesRequestFactory.spaceXLaunchesRequest()
         
@@ -25,7 +25,7 @@ class LaunchesRetrievalOperation: ConcurrentOperation<[Launch]> {
                 else { self.complete(result: .failure(APIError.missingData)) }
                 return
             }
-            
+
             do {
                 let launches = try JSONDecoder().decode([Launch].self, from: launchesData)
                 self.complete(result: .success(launches))
@@ -36,13 +36,13 @@ class LaunchesRetrievalOperation: ConcurrentOperation<[Launch]> {
         })
         task?.resume()
     }
-    
-    
+
+
     override func cancel() {
         task?.cancel()
         super.cancel()
     }
-    
+
     // MARK: - Private Section -
     private let session: URLSession
     private let launchesRequestFactory: LaunchesURLRequestFactory

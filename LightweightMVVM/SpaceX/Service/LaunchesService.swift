@@ -14,12 +14,12 @@ import Kingfisher
 /// - Space X launches data fetch and view model creation
 /// - Launch mission patch image download
 final class LaunchesService {
-    
+
     init(launchesDataManager: LaunchesDataManager = RemoteLaunchesDataManager()) {
         self.launchesDataManager = launchesDataManager
     }
 
-    
+
     func fetchLaunches(completionHandler: @escaping (_ result: Result<[LaunchViewModel]>) -> Void) {
         launchesDataManager.retrieveLaunches { (result) in
             let launchesDataStore = LaunchesDataStore()
@@ -43,36 +43,36 @@ final class LaunchesService {
             }
         }
     }
-    
-    
+
+
     func fetchMissionPatchImage(at position: Int, completion: @escaping (LaunchViewModel?)->Void ) {
         guard position < launches.count else {
             assertionFailure("launches access out of bound")
             return
         }
-        
+
         guard let url = launches[position].links.missionPatch else { return }
-        
+
         let kfOptions: KingfisherOptionsInfo = [
             .processor(DownsamplingImageProcessor(size: UIScreen.main.bounds.size)),
             .scaleFactor(UIScreen.main.scale),
             .cacheOriginalImage
         ]
-        
+
         KingfisherManager.shared.retrieveImage(with: url, options: kfOptions) { result in
             switch result {
             case .success(let value):
-                
+
                 var launchViewModel = LaunchViewModel(from: self.launches[position])
                 launchViewModel.missionPatchImage = value.image
-                
+
                 completion(launchViewModel)
             case .failure:
                 completion(nil)
             }
         }
     }
-    
+
     // MARK: - Private Section -
     private var launchesDataManager: LaunchesDataManager
     private var launches: [Launch] = []

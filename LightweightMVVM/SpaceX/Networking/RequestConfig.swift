@@ -16,7 +16,7 @@ enum HTTPRequestMethod: String {
 
 class RequestConfig {
     let APIHost: String
-    
+
     init() {
         self.APIHost = "https://api.spacexdata.com/v3"
     }
