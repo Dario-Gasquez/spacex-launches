@@ -9,12 +9,12 @@
 import Foundation
 
 class QueueManager {
-    
+
     static func enqueue(_ operation: Operation) {
         queue.addOperation(operation)
     }
-    
+
     //MARK: - Private Section -
     private static let queue = OperationQueue()
-    
+
 }

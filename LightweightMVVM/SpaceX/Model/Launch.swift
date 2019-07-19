@@ -34,8 +34,8 @@ extension Launch: Codable {
         case links
         case rocket
     }
-    
-    
+
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         flightNumber = try container.decode(Int.self, forKey: .flightNumber)

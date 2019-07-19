@@ -9,7 +9,7 @@
 import Foundation
 
 class LaunchesURLRequestFactory: URLRequestFactory {
-    
+
     func spaceXLaunchesRequest() -> URLRequest {
         var request = jsonRequest(endPoint: "launches")
         request.httpMethod = HTTPRequestMethod.get.rawValue

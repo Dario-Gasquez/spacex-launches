@@ -37,7 +37,7 @@ struct Links: Codable {
     let videoLink: URL?
     let youTubeID: URL?
     let flickrImages: [URL]
-    
+
     enum CodingKeys: String, CodingKey {
         case missionPatch = "mission_patch"
         case smallMissionPatch = "mission_patch_small"

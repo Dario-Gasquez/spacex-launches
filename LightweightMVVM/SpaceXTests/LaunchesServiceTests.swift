@@ -10,9 +10,9 @@ import XCTest
 @testable import SpaceX
 
 class LaunchesServiceTests: XCTestCase {
-    
+
     var launchesService: LaunchesService!
-    
+
     override func setUp() {
         launchesService = LaunchesService(launchesDataManager: FakeLaunchesDataManager())
     }
@@ -21,7 +21,7 @@ class LaunchesServiceTests: XCTestCase {
         launchesService = nil
     }
 
-    
+
     func testLaunchesViewModelArray_IsNotEmpty() {
         launchesService.fetchLaunches { (result) in
             switch result {
