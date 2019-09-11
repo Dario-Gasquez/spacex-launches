@@ -17,7 +17,10 @@ class SpaceXUITests: XCTestCase {
         continueAfterFailure = false
 
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        let app = XCUIApplication()
+        // Adding a launch arguments allows us to process the argument and do things differently when launching in testing mode
+        app.launchArguments = ["testing-mode"]
+        app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -26,9 +29,24 @@ class SpaceXUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testColumnModeSwitch() {
+        let app = XCUIApplication()
+
+        let collectionView = app.collectionViews.element
+        // Because we are not using stub data but connecting to the actual SpaceX Backend, we need to wait for the collectionView to be populated with data
+        XCTAssertTrue(collectionView.cells.firstMatch.waitForExistence(timeout: 5.0))
+
+        // Switch and verify one column mode
+        app.toolbars.element.buttons["OneColumn"].tap()
+        let collectionViewWidth = collectionView.frame.width
+        let cell = app.collectionViews.cells.element(boundBy: 0)
+        XCTAssertEqual(cell.frame.width, collectionViewWidth)
+
+        // Switch and verify two column mode
+        app.toolbars.element.buttons["TwoColumn"].tap()
+        XCTAssertTrue(cell.frame.width <= collectionViewWidth / 2)
+
     }
 
 }
