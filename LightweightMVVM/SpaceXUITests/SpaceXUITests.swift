@@ -30,12 +30,12 @@ class SpaceXUITests: XCTestCase {
     }
 
 
-    func testColumnModeSwitch() {
+    func test_ColumnModeSwitch() {
         let app = XCUIApplication()
 
         let collectionView = app.collectionViews.element
-        // Because we are not using stub data but connecting to the actual SpaceX Backend, we need to wait for the collectionView to be populated with data
-        XCTAssertTrue(collectionView.cells.firstMatch.waitForExistence(timeout: 5.0))
+        // Because we are connecting to the actual SpaceX Backend, we need to wait for the collectionView to be populated with data
+        XCTAssertTrue(collectionView.cells.firstMatch.waitForExistence(timeout: 10.0))
 
         // Switch and verify one column mode
         app.toolbars.element.buttons["OneColumn"].tap()
@@ -46,7 +46,42 @@ class SpaceXUITests: XCTestCase {
         // Switch and verify two column mode
         app.toolbars.element.buttons["TwoColumn"].tap()
         XCTAssertTrue(cell.frame.width <= collectionViewWidth / 2)
-
     }
 
+
+    func test_ShowLaunchDetailsScreen() {
+        let app = XCUIApplication()
+
+        let collectionView = app.collectionViews.element
+        // Because we are connecting to the actual SpaceX Backend, we need to wait for the collectionView to be populated with data.
+        XCTAssertTrue(collectionView.cells.firstMatch.waitForExistence(timeout: 10.0)) // Wait time is the max. time the test will wait until failing. If the data is retrieved before (for example after 2 seconds) then the test will continue running at that moment.
+
+        // Verify 4th cell exists
+        let fourthMissionCell = collectionView.cells.element(boundBy: 3)
+        guard fourthMissionCell.exists && fourthMissionCell.staticTexts.firstMatch.label == "RatSat" else {
+            XCTFail("Failed to get exptected 4th mission")
+            return
+        }
+
+        // Verify mission name and number exist and retrieve them
+        XCTAssertTrue(fourthMissionCell.staticTexts.firstMatch.exists)
+        let missionName = fourthMissionCell.staticTexts.firstMatch.label
+        XCTAssertTrue(fourthMissionCell.staticTexts.element(boundBy: 1).exists)
+        let missionNumber = fourthMissionCell.staticTexts.element(boundBy: 1).label
+
+        // Tap the 4th cell (RatSat) which corresponds to the 1st successfull launch
+        fourthMissionCell.tap()
+
+        // NOTE: Wait for the mission badge image to exist before doing the other verifications. We do this to avoid querying the values (app.staticTexts) in the previous screen (Launches) instead of the ones we want to validate (Launch Details), which would cause the test to fail. There might be a more appropriate way to do this, for example disabling animations in AppDelegate when launching in test mode?.
+        XCTAssertTrue(app.images["MissionPatchImageView"].waitForExistence(timeout: 1.0))
+
+        // Verify 'Launch Details' title
+        let title = app.navigationBars.element.identifier
+        XCTAssertTrue(title == "Launch Details")
+
+        // Verify mission name and number match those in the tapped 4th cell and result is "Success"
+        XCTAssertEqual(missionName, app.staticTexts.element(boundBy: 0).label)
+        XCTAssertEqual(missionNumber, app.staticTexts.element(boundBy: 2).label)
+        XCTAssertEqual("Success", app.staticTexts.element(boundBy: 1).label)
+    }
 }

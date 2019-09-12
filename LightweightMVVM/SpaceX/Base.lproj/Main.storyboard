@@ -143,6 +143,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-Lh-nJE" userLabel="MissionPatchImageView">
                                                 <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="MissionPatchImageView"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="WfK-rg-xfX"/>
                                                 </constraints>
