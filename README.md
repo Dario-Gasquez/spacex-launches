@@ -77,7 +77,7 @@ A very simple solution using `UINavigationController`'s `hidesBarsOnSwipe` prope
 The App was internationalized and partially localized (to English and Spanish).
 
 ### 2. Testing
-The `SpaceXTests` target provides some unit tests for the `LaunchesService` and `LaunchViewModel`. Additional tests can be added to increase code coverage.
+The `SpaceXTests` target provides some unit tests for the `LaunchesService` and `LaunchViewModel`. In a similar way `SpaceXUITests` includes a couple of UI tests.
 
 ### 3. Persistence
 `LaunchesDataStore` provides methods to save (or load) to disk the launches information retrieved from the backend. This is implemented by saving the information to a .plist file, whose format is compatible with the JSON format received.
