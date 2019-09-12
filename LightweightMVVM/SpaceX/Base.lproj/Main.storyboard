@@ -96,6 +96,9 @@
                     <toolbarItems>
                         <barButtonItem image="OneColumnIcon" id="Ivf-fA-p1z">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="OneColumn"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapOneColumnButton:" destination="BYZ-38-t0r" id="bPj-33-oyE"/>
                             </connections>
@@ -103,6 +106,9 @@
                         <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="0od-bo-0q8"/>
                         <barButtonItem image="TwoColumnsIcon" id="pGe-JX-RZt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="TwoColumn"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapTwoColumnsButton:" destination="BYZ-38-t0r" id="FMA-sZ-HAF"/>
                             </connections>
@@ -137,6 +143,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-Lh-nJE" userLabel="MissionPatchImageView">
                                                 <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="MissionPatchImageView"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="WfK-rg-xfX"/>
                                                 </constraints>
