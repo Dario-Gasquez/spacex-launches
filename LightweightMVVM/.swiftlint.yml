@@ -3,3 +3,5 @@ disabled_rules:
 - vertical_whitespace
 force_try:
     severity: warning
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
