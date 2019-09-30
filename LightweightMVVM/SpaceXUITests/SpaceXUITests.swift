@@ -80,8 +80,8 @@ class SpaceXUITests: XCTestCase {
         XCTAssertTrue(title == "Launch Details")
 
         // Verify mission name and number match those in the tapped 4th cell and result is "Success"
-        XCTAssertEqual(missionName, app.staticTexts.element(boundBy: 0).label)
-        XCTAssertEqual(missionNumber, app.staticTexts.element(boundBy: 2).label)
-        XCTAssertEqual("Success", app.staticTexts.element(boundBy: 1).label)
+        XCTAssertEqual(missionName, app.staticTexts.element(boundBy: 1).label)
+        XCTAssertEqual(missionNumber, app.staticTexts.element(boundBy: 3).label)
+        XCTAssertEqual("Success", app.staticTexts.element(boundBy: 2).label)
     }
 }
