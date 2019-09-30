@@ -3,13 +3,15 @@
 # Space X Launches
 A small iOS sample app that retrieves and shows Space X launches information by consuming the information provided by the [Space X API](https://github.com/r-spacex/SpaceX-API).
 
+## Requirements
+1. Xcode 11
+
 ## Install Instructions
 1. Download the zip file or clone the project from [here](https://github.com/Dario-Gasquez/spacex-launches)
 2. Open LightweightMVVM/SpaceX.xcodeproj
 3. Compile and Run
 
 NOTES: 
-- Xcode 10.2 and Swift 5 were used to create this project.
 - Although Carthage was used to include [Kingfisher](https://github.com/onevcat/Kingfisher), you should be able to compile the application without interacting with this dependency manager.
 - This project is configured to run [SwiftLint](https://github.com/realm/SwiftLint), if installed. A few violations have been left on purpose to ilustrate the use of SwiftLint.
 
@@ -91,6 +93,6 @@ The user is able to refresh the information shown in the launches list screen by
 If the content in the launch details screen is scrollable, then the mission patch image is stretched when the user scrolls down. This was implemented in `LaunchDetailsView` by aplying a scale and translate `CGAffineTransform` when the scroll down is detected.
 
 ## Troubleshooting
-### Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler (Kingfisher)
+### Module compiled with Swift version.x cannot be imported by the Swift version.y compiler (Kingfisher)
 Update the library using the following command:
 `carthage update Kingfisher --platform iOS --no-use-binaries`
