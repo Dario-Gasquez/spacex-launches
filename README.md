@@ -4,7 +4,7 @@
 A small iOS sample app that retrieves and shows Space X launches information by consuming the information provided by the [Space X API](https://github.com/r-spacex/SpaceX-API).
 
 ## Requirements
-1. Xcode 11
+1. Xcode 12+
 
 ## Install Instructions
 1. Download the zip file or clone the project from [here](https://github.com/Dario-Gasquez/spacex-launches)
