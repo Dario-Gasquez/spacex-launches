@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		A34684102264DF5D008171BC /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346840F2264DF5D008171BC /* ConcurrentOperation.swift */; };
 		A34684122264F7AE008171BC /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684112264F7AE008171BC /* RequestConfig.swift */; };
 		A34684142264F876008171BC /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684132264F876008171BC /* URLRequestFactory.swift */; };
+		A380E74C2547ABB100425004 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A380E74B2547ABB100425004 /* Kingfisher */; };
 		A38C88F4223C72DD00ACB52F /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C88F3223C72DD00ACB52F /* LaunchDetailsViewController.swift */; };
 		A38C88F6223C752600ACB52F /* LaunchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C88F5223C752600ACB52F /* LaunchDetailsView.swift */; };
 		A396F407223B03E600B5F94A /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396F406223B03E600B5F94A /* LaunchViewModel.swift */; };
@@ -111,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A380E74C2547ABB100425004 /* Kingfisher in Frameworks */,
 				A3CA9C4122947418008E2A5D /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +317,9 @@
 			dependencies = (
 			);
 			name = SpaceX;
+			packageProductDependencies = (
+				A380E74B2547ABB100425004 /* Kingfisher */,
+			);
 			productName = Buccaneers;
 			productReference = A3FDE480223ABC7F0052C2AF /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -391,6 +396,9 @@
 				es,
 			);
 			mainGroup = A3FDE477223ABC7F0052C2AF;
+			packageReferences = (
+				A380E74A2547ABB100425004 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A3FDE481223ABC7F0052C2AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -690,10 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9H8DB4ACA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/SpaceX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -712,10 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9H8DB4ACA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/SpaceX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -852,6 +854,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A380E74A2547ABB100425004 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A380E74B2547ABB100425004 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A380E74A2547ABB100425004 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A3FDE478223ABC7F0052C2AF /* Project object */;
 }

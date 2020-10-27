@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/dario/Desktop/GitHub/spacex-launches/LightweightMVVM/SpaceX.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
