@@ -48,8 +48,8 @@ extension Launch: Codable {
         rocket = try container.decode(Rocket.self, forKey: .rocket)
         links = try container.decode(Links.self, forKey: .links)
     }
-    
-    
+
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(flightNumber, forKey: .flightNumber)

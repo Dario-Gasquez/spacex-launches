@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A300F057229303980066B595 /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F056229303980066B595 /* ParallaxFlowLayout.swift */; };
 		A300F05A229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */; };
-		A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A312FBA4223F70F20003100D /* Kingfisher.framework */; };
 		A314B98C22652C06002F9F70 /* LaunchesURLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */; };
 		A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */; };
 		A314B990226533A0002F9F70 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98F226533A0002F9F70 /* QueueManager.swift */; };
@@ -19,6 +18,7 @@
 		A34684102264DF5D008171BC /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346840F2264DF5D008171BC /* ConcurrentOperation.swift */; };
 		A34684122264F7AE008171BC /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684112264F7AE008171BC /* RequestConfig.swift */; };
 		A34684142264F876008171BC /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34684132264F876008171BC /* URLRequestFactory.swift */; };
+		A380E74C2547ABB100425004 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A380E74B2547ABB100425004 /* Kingfisher */; };
 		A38C88F4223C72DD00ACB52F /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C88F3223C72DD00ACB52F /* LaunchDetailsViewController.swift */; };
 		A38C88F6223C752600ACB52F /* LaunchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C88F5223C752600ACB52F /* LaunchDetailsView.swift */; };
 		A396F407223B03E600B5F94A /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396F406223B03E600B5F94A /* LaunchViewModel.swift */; };
@@ -64,8 +64,6 @@
 /* Begin PBXFileReference section */
 		A300F056229303980066B595 /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
 		A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewParallaxLayoutAttributes.swift; sourceTree = "<group>"; };
-		A312FBA4223F70F20003100D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
-		A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Kingfisher.framework.dSYM; path = Carthage/Build/iOS/Kingfisher.framework.dSYM; sourceTree = "<group>"; };
 		A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesURLRequestFactory.swift; sourceTree = "<group>"; };
 		A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesRetrievalOperation.swift; sourceTree = "<group>"; };
 		A314B98F226533A0002F9F70 /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
@@ -114,8 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A380E74C2547ABB100425004 /* Kingfisher in Frameworks */,
 				A3CA9C4122947418008E2A5D /* WebKit.framework in Frameworks */,
-				A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				A3CA9C4022947418008E2A5D /* WebKit.framework */,
-				A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */,
-				A312FBA4223F70F20003100D /* Kingfisher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +310,6 @@
 				A3FDE47C223ABC7F0052C2AF /* Sources */,
 				A3FDE47D223ABC7F0052C2AF /* Frameworks */,
 				A3FDE47E223ABC7F0052C2AF /* Resources */,
-				A312FBA8223F71300003100D /* ShellScript */,
 				A33D1F0C22E11F170087030A /* SwiftLint */,
 			);
 			buildRules = (
@@ -322,6 +317,9 @@
 			dependencies = (
 			);
 			name = SpaceX;
+			packageProductDependencies = (
+				A380E74B2547ABB100425004 /* Kingfisher */,
+			);
 			productName = Buccaneers;
 			productReference = A3FDE480223ABC7F0052C2AF /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -369,7 +367,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Dario Gasquez";
 				TargetAttributes = {
 					A3FDE47F223ABC7F0052C2AF = {
@@ -398,6 +396,9 @@
 				es,
 			);
 			mainGroup = A3FDE477223ABC7F0052C2AF;
+			packageReferences = (
+				A380E74A2547ABB100425004 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A3FDE481223ABC7F0052C2AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -441,25 +442,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A312FBA8223F71300003100D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
 		A33D1F0C22E11F170087030A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -617,6 +599,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -642,7 +625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -679,6 +662,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -698,7 +682,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -714,10 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9H8DB4ACA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/SpaceX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -736,10 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9H8DB4ACA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/SpaceX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -876,6 +854,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A380E74A2547ABB100425004 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A380E74B2547ABB100425004 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A380E74A2547ABB100425004 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A3FDE478223ABC7F0052C2AF /* Project object */;
 }
