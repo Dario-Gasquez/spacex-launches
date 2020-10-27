@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A300F057229303980066B595 /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F056229303980066B595 /* ParallaxFlowLayout.swift */; };
 		A300F05A229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */; };
-		A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A312FBA4223F70F20003100D /* Kingfisher.framework */; };
 		A314B98C22652C06002F9F70 /* LaunchesURLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */; };
 		A314B98E22653025002F9F70 /* LaunchesRetrievalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */; };
 		A314B990226533A0002F9F70 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314B98F226533A0002F9F70 /* QueueManager.swift */; };
@@ -64,8 +63,6 @@
 /* Begin PBXFileReference section */
 		A300F056229303980066B595 /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
 		A300F059229304420066B595 /* UICollectionViewParallaxLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewParallaxLayoutAttributes.swift; sourceTree = "<group>"; };
-		A312FBA4223F70F20003100D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
-		A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Kingfisher.framework.dSYM; path = Carthage/Build/iOS/Kingfisher.framework.dSYM; sourceTree = "<group>"; };
 		A314B98B22652C06002F9F70 /* LaunchesURLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesURLRequestFactory.swift; sourceTree = "<group>"; };
 		A314B98D22653025002F9F70 /* LaunchesRetrievalOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesRetrievalOperation.swift; sourceTree = "<group>"; };
 		A314B98F226533A0002F9F70 /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
@@ -115,7 +112,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CA9C4122947418008E2A5D /* WebKit.framework in Frameworks */,
-				A312FBA5223F70F20003100D /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				A3CA9C4022947418008E2A5D /* WebKit.framework */,
-				A312FBA6223F70F70003100D /* Kingfisher.framework.dSYM */,
-				A312FBA4223F70F20003100D /* Kingfisher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +308,6 @@
 				A3FDE47C223ABC7F0052C2AF /* Sources */,
 				A3FDE47D223ABC7F0052C2AF /* Frameworks */,
 				A3FDE47E223ABC7F0052C2AF /* Resources */,
-				A312FBA8223F71300003100D /* ShellScript */,
 				A33D1F0C22E11F170087030A /* SwiftLint */,
 			);
 			buildRules = (
@@ -441,25 +434,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A312FBA8223F71300003100D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
 		A33D1F0C22E11F170087030A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
