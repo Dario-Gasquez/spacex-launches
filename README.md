@@ -19,11 +19,11 @@ NOTES:
 ## Description
 ### Architecture
 I tried to strike a balance between choosing a robust architecture on one hand and avoiding needless complexity or solution over-design on the other.
-A lightweight MVVM architecture was used in the creation of Space X Launches. Functionality was divided in the following layers (which match some of the Xcode project groups names): `Model`, `ViewModel`, `Service`, `Persistence`, `Networking` and `ViewController`.
+An architecture based on a lightweight MVVM pattern was used in the creation of Space X Launches. Functionality was divided in the following layers (which match some of the Xcode project groups names): `Model`, `ViewModel`, `Service`, `Persistence`, `Networking` and `ViewController`.
 
 #### Lightweight MVVM
 I will elaborate briefly on what I mean by this. The decision to use the *lightweight* term lies mainly in a couple of reasons:
-- There is no data binding mechanism between the viewModel and the model. This would allow, for example, to update the model based on 
+- There is no data binding mechanism between the viewModel and the view. This would allow, for example, to update the model based on 
 user actions (this is not needed in this application as all the screens / views are "read only").
 - The viewModel is mainly a data type responsible to adapt the model to the needs of a particular view and only contains the specific presentation logic for that view. It does not contain business logic, interaction with the networking layer or other functionality. I think this is good to keep the viewModel's role consistent with its name, and additionaly avoids violating the [Single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 
